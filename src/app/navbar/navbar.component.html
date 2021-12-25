@@ -1,0 +1,59 @@
+<!--Navbar-->
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-light fixed-top">
+
+  <!-- Navbar brand -->
+  <mdb-navbar-brand><a class="navbar-brand" href="#">
+      Matt-PT</a></mdb-navbar-brand>
+
+  <!-- Collapsible content -->
+  <links class="d-flex justify-content-between">
+
+    <!-- Links -->
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link waves-light" [routerLink]="['/home']">About<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link waves-light" [routerLink]="['/about']">Library</a>
+      </li>
+      <li class="nav-item dropdown" dropdown>
+        <a dropdownToggle type="button" class="nav-link dropdown-toggle waves-light">
+          Products</a>
+        <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
+          <a class="dropdown-item waves-light" [routerLink]="['/digital']">Product One</a>
+        </div>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link waves-light" [routerLink]="['/contact']">Contact</a>
+      </li>
+
+      <!-- Dropdown -->
+
+
+
+    </ul>
+    <!-- Links -->
+
+    <!-- Search form -->
+    <form class="form-inline waves-light">
+      <div class="md-form">
+        <span class="material-icons">face</span>
+
+        <span class="material-icons notification-label">
+          notifications
+        </span>
+        <span class="material-icons login-label">
+          login
+        </span>
+
+        <span class="material-icons logout-label">
+          logout
+        </span>
+      </div>
+    </form>
+  </links>
+  <!-- Collapsible content -->
+
+</mdb-navbar>
+<!--/.Navbar-->

@@ -1,1 +1,78 @@
-/* You can add global styles to this file, and also import other style files */
+// @import "./assets/styles/reset.scss";
+// MDB SCSS
+@import "~mdb-angular-ui-kit/assets/scss/mdb.scss";
+//Material Icons
+// @import '~material-design-icons/iconfont/material-icons.css';
+// Variables
+@import "./assets/styles/variables.scss";
+
+body{background: $clr-bg-body;}
+
+.material-icons {
+  position: relative;
+  padding: 15px;
+  margin-left: 20px;
+  transition: 0.5s;
+}
+.material-icons:hover {
+  color: #fff;
+}
+
+.material-icons::before {
+  content: "";
+  inset: 0;
+  border-radius: 5px;
+  transition: 0.5s;
+  transform: translateY(-20px);
+  opacity: 0;
+  position: absolute;
+}
+
+.material-icons:hover::before {
+  content: "";
+  background-image: linear-gradient(
+    to right top,
+    #051937,
+    #004d7a,
+    #008793,
+    #5650b1,
+    #004d7a,
+  );
+  border-radius: 50%;
+  transform: translateY(0px);
+  z-index: -1;
+  opacity: 1;
+}
+.notification-label::after{
+    content: "MESSAGES";
+}
+
+.login-label::after{
+    content: "LOGIN";
+}
+
+.logout-label::after{
+    content: "LOGOUT";
+}
+
+.material-icons::after {
+    left:0;
+    right:0;
+    text-align: center;
+    font-size:10px;
+    font-weight: bolder;
+    font-family: 'Courier New', Courier, monospace;
+    transition: 0.5s;
+    transform: translateY(80px);
+    opacity: 0;
+    position: absolute;
+    
+  }
+  .material-icons:hover::after {
+    transition: 0.5s;
+    transform: translateY(47px);
+    opacity: 1;
+    position: absolute;
+    background: #004d7a;
+    border-radius: 5px;
+  }
