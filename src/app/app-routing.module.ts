@@ -1,7 +1,61 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { HomeComponent } from './home/home.component';
 
-const routes: Routes = [];
+const routes: Routes = [ { path: "", component: HomeComponent, pathMatch: "full" },];
+
+
+// const routes: Routes = [
+//   {
+//     path: "home",
+//     component: HomeComponent,
+//   },
+//   {
+//     path: "contact",
+//     component: ContactComponent,
+//   },
+
+//   {
+//     path: "about",
+//     component: AboutComponent,
+//   },
+//   {
+//     path: "digital",
+//     component: DigitalComponent,
+//   },
+//   {
+//     path: "video",
+//     component: VideoComponent,
+//   },
+//   {
+//     path: "classroom",
+//     component: ClassroomComponent,
+//   },
+//   {
+//     path: "auditorium",
+//     component: AuditoriumComponent,
+//   },
+//   {
+//     path: "cctv",
+//     component: CctvComponent,
+//   },
+//   {
+//     path: "theater",
+//     component: TheaterComponent,
+//   },
+
+//   {
+//     path: "lignting",
+//     component: LightingComponent,
+//   },
+//   {
+//     path: "cabling",
+//     component: CablingComponent,
+//   },
+
+//   { path: "", component: HomeComponent, pathMatch: "full" },
+// ];
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

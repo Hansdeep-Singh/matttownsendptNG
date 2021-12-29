@@ -1,17 +1,28 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap");
-$font-poppins: "Poppins", sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&family=Vujahday+Script&display=swap');
+$font-poppins: 'Poppins', sans-serif;
+$font-Vujahday: 'Vujahday Script', cursive;
 $clr-black-100: hsl(0, 0%, 0%);
 $clr-black-200: hsl(0, 0%, 10%);
 $clr-black-300: hsl(0, 0%, 20%);
 
 $clr-white-100: hsl(0, 0%, 100%);
+$clr-bg-body: $clr-white-100;
 
+//Font Size 
+$font-size-display-1:clamp(2.5rem, 5.5vw, 8.3rem);
+$font-size-h1: max(4vw, 2em, 2rem);
+$font-size-h2: clamp(1.2rem, 2vw, 4.5rem);
+$font-size-paragraph:clamp(1rem, 1.5vw, 3.0rem);
 //Theme Dark
-$clr-bg-body: #0f0f0f;
+$clr-bg-body: #666666;
 $clr-text-secondary: #868686;
+$clr-text-skyblue: #89d2fd;
 $clr-text-primary: #fff;
 $clr-bg-tan: #ffcf95;
 $clr-bg-plum: #d9337d;
 $clr-bg-orchid: #b14ec2;
 $clr-bg-skyblue: #89d2fd;
 $clr-bg-orange:#F9440A;
+
+
+
