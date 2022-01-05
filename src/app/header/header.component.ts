@@ -18,6 +18,10 @@ export class HeaderComponent implements OnInit {
 
   tempNumber: number | undefined;
 
+  showdivtwo(){
+    const slidesFat = document.getElementsByClassName('image-fat');
+  }
+
   showDiv() {
     const crousalFatSlides = document.getElementsByClassName('crousal-left');
     const crousalFitSlides = document.getElementsByClassName('crousal-right');
