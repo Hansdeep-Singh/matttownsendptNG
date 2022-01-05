@@ -40,6 +40,84 @@ p {
   font-size: $font-size-paragraph;
 }
 
+#navbar {
+  .bookmebtn {
+    position: relative;
+    background: black;
+    color: white;
+    border: none;
+    padding: 5px;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    border-radius: 25px;
+  }
+  .bookmebtn::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: -5px 5px 5px -5px;
+    border: none;
+    content: "";
+    width: 105%;
+    height: 100%;
+    z-index: -1;
+    background: conic-gradient(red, yellow, lime, aqua, blue, magenta, red);
+    padding: 41px 51px 5px 5px;
+    border-radius: 25px;
+    transition: 1.5s;
+    opacity: 1;
+  }
+
+  .bookmebtn:hover::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: -5px 5px 5px -5px;
+    border: none;
+    content: "";
+    width: 105%;
+    height: 100%;
+    z-index: -1;
+    background: conic-gradient(red, yellow, lime, aqua, blue, magenta, red);
+    padding: 41px 51px 5px 5px;
+    border-radius: 25px;
+    opacity: 0;
+  }
+
+  .bookmebtn::after {
+    position: absolute;
+    transition: 1.5s;
+    top: 0;
+    left: 0;
+    margin: -5px 5px 5px -5px;
+    border: none;
+    content: "";
+    width: 105%;
+    height: 100%;
+    z-index: -1;
+    background: conic-gradient(blue, magenta, aqua, red, yellow, lime, blue);
+    padding: 41px 51px 5px 5px;
+    border-radius: 25px;
+    opacity: 0;
+  }
+  .bookmebtn:hover::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: -5px 5px 5px -5px;
+    border: none;
+    content: "";
+    width: 105%;
+    height: 100%;
+    z-index: -1;
+    background: conic-gradient(blue, magenta, aqua, red, yellow, lime, blue);
+    padding: 41px 51px 5px 5px;
+    border-radius: 25px;
+    opacity: 1;
+  }
+}
+
 .material-icons {
   position: relative;
   padding: 15px;
@@ -120,29 +198,30 @@ p {
     align-items: center;
     flex-direction: row;
     justify-content: center;
-    position:relative;
-    width:90%;
-    }
+    position: relative;
+    width: 90%;
+  }
   @media only screen and (max-width: 1000px) {
     .crousal {
       flex-direction: column;
     }
   }
 
-  .crousal .crousal-left,.crousal-right{
-    width:80%;
+  .crousal .crousal-left,
+  .crousal-right {
+    width: 80%;
   }
- 
+
   .crousal img {
     border-radius: 50%;
     border: $clr-bg-orange 1rem solid;
-    width:100%;
+    width: 100%;
   }
   h1 {
     margin-top: 1%;
     text-align: center;
     font-size: $font-size-display-1;
-    font-family: $font-Vujahday;
+    font-family: $font-vujahday;
     quotes: "“" "”" "‘" "’";
   }
   h1::before {
@@ -159,57 +238,54 @@ p {
     text-align: center;
   }
 
-
   .crousal-link {
+    padding: 10px;
     position: relative;
-    background: $clr-bg-orange;
-    margin-left: -10px;
-    margin-right: -10px;
-    min-width: 250px;
-    min-height: 200px;
-    z-index: -1;
+    border-radius: $border-circle;
     h2 {
-      margin-top:10px;
+      padding: 4px 0 0 0;
       color: chartreuse;
+      font-weight: bolder;
     }
   }
 
-  .crousal-link::before{
-    content: '';
-    position: absolute;
-    isolation: isolate;
-    z-index: -2;
-    width: 675px;
-    height: 862px;
-    border-radius: $border-circle;
-    background-image: linear-gradient(
-      to right,
-      #401f46,
-      #272727,
-      #401f46
-    );
-    top: 127px;
-    left: -212px;
-  }
+  // Hans Says - Below is if you want to put curve
+  // .crousal-link::before{
+  //   content: '';
+  //   position: absolute;
+  //   isolation: isolate;
+  //   z-index: -2;
+  //   width: 675px;
+  //   height: 862px;
+  //   border-radius: $border-circle;
+  //   background-image: linear-gradient(
+  //     to right,
+  //     #401f46,
+  //     #272727,
+  //     #401f46
+  //   );
+  //   top: 127px;
+  //   left: -212px;
+  // }
 
-  .crousal-link::after{
-    content: '';
-    position: absolute;
-    isolation: isolate;
-    z-index: -2;
-    width: 675px;
-    height: 543px;
-    border-radius: $border-circle;
-    background-image: linear-gradient(
-      to right,
-      #401f46,
-      #272727,
-      #401f46
-    );
-    top: -482px;
-    left: -212px;
-  }
-  
+  // .crousal-link::after{
+  //   content: '';
+  //   position: absolute;
+  //   isolation: isolate;
+  //   z-index: -2;
+  //   width: 675px;
+  //   height: 543px;
+  //   border-radius: $border-circle;
+  //   background-image: linear-gradient(
+  //     to right,
+  //     #401f46,
+  //     #272727,
+  //     #401f46
+  //   );
+  //   top: -482px;
+  //   left: -212px;
+  // }
+
   .crousal-left,
   .crousal-right,
   .crousal-link-pad {
@@ -252,15 +328,20 @@ p {
 
   .crousal-link-pad {
     padding: 0 7px 0 7px;
-    min-height: 200px;
-   
   }
+}
 
+#parallel-1 {
   .parallel-1 {
-    background-image: url(./assets/images/fat-1.JPG);
+    background-image: url(./assets/images/parallel-2.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     max-width: 100%;
+  }
+  h1{
+    font-family: $font-oswald;
+    text-align: center;
+    font-size: $font-size-display-1;
   }
 }
 
@@ -283,4 +364,35 @@ p {
     #282828,
     #303030
   );
+}
+
+.space-1 {
+  width: 100%;
+  height: 10vh;
+}
+.space-2 {
+  width: 100%;
+  height: 20vh;
+}
+.space-3 {
+  width: 100%;
+  height: 30vh;
+}
+.space-4 {
+  width: 100%;
+  height: 40vh;
+}
+
+.shade-1{
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+}
+.shade-1::before{
+  position:absolute;
+  inset:0;
+  z-index: -1;
+  background: black;
+  opacity:0.3;
+  content:'';
 }
