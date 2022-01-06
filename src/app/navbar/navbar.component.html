@@ -4,7 +4,12 @@
 
     <!-- Navbar brand -->
     <mdb-navbar-brand><a class="navbar-brand" href="#">
-        Matt-PT</a></mdb-navbar-brand>
+        Matt</a></mdb-navbar-brand>
+    <div class="d-flex mx-2 d-lg-none align-items-left">
+      <button type="button" [routerLink]="['/book']" class="bookmebtn">
+        Book
+      </button>
+    </div>
 
     <!-- Collapsible content -->
     <links class="d-flex justify-content-between">
@@ -30,23 +35,15 @@
         </li>
 
         <li class="nav-item float-right ml-0">
-
         </li>
-
-        <!-- Dropdown -->
-
-
-
       </ul>
-      <!-- Links -->
 
-      <div class="d-flex align-items-center">
-        <button type="button" class="bookmebtn">
+      <!-- Links -->
+      <div class="d-flex mx-2 d-none d-lg-block align-items-left">
+        <button type="button" [routerLink]="['/book']" class="bookmebtn">
           Book
         </button>
-
       </div>
-
 
       <!-- Search form -->
       <form class="form-inline waves-light d-flex align-items-center">

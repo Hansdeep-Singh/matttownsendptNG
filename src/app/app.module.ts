@@ -24,11 +24,12 @@ import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { ParallaxModule, ParallaxConfig } from "ngx-parallax";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { CalendarComponent } from './calendar/calendar.component';
 
 
 
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, HeaderComponent, HomeComponent],
+  declarations: [AppComponent, NavbarComponent, HeaderComponent, HomeComponent, CalendarComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
