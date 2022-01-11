@@ -16,6 +16,9 @@ export class HeaderComponent implements OnInit {
     });
   }
 
+  ngOnDestroy() {
+    if (this.subscription) this.subscription?.unsubscribe();
+  }
   tempNumber: number | undefined;
 
   showdivtwo(){

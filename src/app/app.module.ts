@@ -22,14 +22,20 @@ import { MdbValidationModule } from 'mdb-angular-ui-kit/validation';
 import { AnimateOnScrollModule } from 'ng2-animate-on-scroll';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
-import { ParallaxModule, ParallaxConfig } from "ngx-parallax";
-import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { ParallaxModule, ParallaxConfig } from 'ngx-parallax';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CalendarComponent } from './calendar/calendar.component';
 
 
 
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, HeaderComponent, HomeComponent, CalendarComponent],
+  declarations: [
+    AppComponent,
+    NavbarComponent,
+    HeaderComponent,
+    HomeComponent,
+    CalendarComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -51,7 +57,7 @@ import { CalendarComponent } from './calendar/calendar.component';
     ParallaxModule,
     BrowserAnimationsModule,
     MDBBootstrapModule.forRoot(),
-    AnimateOnScrollModule.forRoot()
+    AnimateOnScrollModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent],

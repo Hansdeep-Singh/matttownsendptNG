@@ -1,1 +1,47 @@
-<p>calendar works!</p>
+<section id="calendar">
+    <div class="container-fluid">
+        <div class="row mt-3">
+            <div class="col">
+                <h1>Current Bookings</h1>
+            </div>
+        </div>
+        <div class="row">
+           
+            <div class="col text-center">
+                <button (click)="fnPrevious()"> <span class="material-icons previous-month">
+                        undo
+                    </span>
+                </button>
+            </div>
+            <div class="col text-center">
+                <button (click)="fnNext()"> <span class="material-icons next-month">
+                        redo
+                    </span>
+                </button>
+            </div>
+          
+        </div>
+        <div class="row">
+            <div class="col text-center">
+                {{currentMonthYear.month}}
+                {{currentMonthYear.year}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <table>
+                    <tr>
+                        <th *ngFor="let day of days">
+                            {{day}}
+                        </th>
+                    </tr>
+                    <tr *ngFor="let weeks of Calendar">
+                        <td *ngFor="let day of weeks.days">
+                            {{day}}
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>

@@ -35,13 +35,13 @@ body {
 
 ::-webkit-scrollbar {
   width: 12px;
-  background-color: #61597c;
+  background-color: $clr-secondary-100;
 }
 
 ::-webkit-scrollbar-track {
   margin-block: 0.5em;
   border-radius: 100vw;
-  background: $clr-bg-orange;
+  background: $clr-primary-100;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -82,10 +82,22 @@ p {
   font-size: $font-size-paragraph;
 }
 
+button,
+input[type="submit"],
+input[type="reset"] {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+// Material Icons Start
 .material-icons {
   position: relative;
   padding: 15px;
-  margin-left: 20px;
+
   transition: 0.5s;
   color: $clr-text-skyblue;
 }
@@ -130,6 +142,13 @@ p {
   content: "LOGOUT";
 }
 
+.previous-month::after {
+  content: "PREVIOUS";
+}
+
+.next-month::after {
+  content: "NEXT";
+}
 .material-icons::after {
   left: 0;
   right: 0;
@@ -150,6 +169,7 @@ p {
   background: #004d7a;
   border-radius: 5px;
 }
+//Material Icons End
 
 .grad-1 {
   background-image: linear-gradient(
@@ -231,6 +251,9 @@ p {
     opacity: 1;
   }
 
+  .material-icons {
+    margin-left: 20px;
+  }
   .bookmebtn:hover::before {
     position: absolute;
     top: 0;
@@ -306,7 +329,7 @@ p {
 
   .crousal img {
     border-radius: 50%;
-    border: $clr-bg-orange 1rem solid;
+    border: $clr-primary-100 1rem solid;
     width: 100%;
   }
   h1 {
@@ -438,5 +461,23 @@ p {
 #statement {
   h2 {
     text-align: center;
+  }
+}
+#calendar {
+  .col {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  color: $clr-text-primary;
+  table {
+    border: 1px solid #fff;
+  }
+  table > tr > td {
+    text-align: center;
+    border: 1px solid rgb(255, 255, 255);
+  }
+  table > tr > th {
+    padding: 10px 2vw;
   }
 }
