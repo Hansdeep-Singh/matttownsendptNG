@@ -1,0 +1,32 @@
+<section id="login">
+
+    <form [formGroup]="loginForm" (ngSubmit)="submit()">
+        <div class="form-box">
+            <div class="close-btn">
+                <a (click)="closeLogin()">
+                <span class="material-icons">
+                    close
+                  </span>
+                </a>
+            </div>
+            <h3>Log in</h3>
+            <div class="inputbox">
+                <input id="userName" type="text" name="userName" formControlName="userName" required>
+            </div>
+            <div class="inputbox">
+                <input id="password" type="text" name="password" formControlName="password" required>
+            </div>
+            <div class="inputbox">
+                <div class="form-check form-switch">
+                    <input mdbCheckbox class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" />
+                    Remember me
+                </div>
+                <!-- <input id="rememberMe" type="text" name="rememberMe" formControlName="rememberMe"> -->
+            </div>
+            <div class="inputbox">
+                <button type="submit" [disabled]="!loginForm.valid">Login</button>
+            </div>
+        </div>
+
+    </form>
+</section>

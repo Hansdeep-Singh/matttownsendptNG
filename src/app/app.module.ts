@@ -25,6 +25,9 @@ import { HomeComponent } from './home/home.component';
 import { ParallaxModule, ParallaxConfig } from 'ngx-parallax';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CalendarComponent } from './calendar/calendar.component';
+import { LoginComponent } from './login/login.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 
 
 
@@ -35,10 +38,12 @@ import { CalendarComponent } from './calendar/calendar.component';
     HeaderComponent,
     HomeComponent,
     CalendarComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ReactiveFormsModule,
     MdbAccordionModule,
     MdbCarouselModule,
     MdbCheckboxModule,
@@ -56,6 +61,7 @@ import { CalendarComponent } from './calendar/calendar.component';
     MdbValidationModule,
     ParallaxModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     MDBBootstrapModule.forRoot(),
     AnimateOnScrollModule.forRoot(),
   ],

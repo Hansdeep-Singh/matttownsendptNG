@@ -1,7 +1,10 @@
 <!--Navbar-->
 <section id="navbar">
+  <div [@animateTrigger]="flagShowHide?'show':'hide'">
+    <matt-login (close)="closeLogin($event)"></matt-login>
+  </div>
   <mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark grad-1 fixed-top">
-
+  
     <!-- Navbar brand -->
     <mdb-navbar-brand><a class="navbar-brand" href="#">
         Matt</a></mdb-navbar-brand>
@@ -46,21 +49,23 @@
       </div>
 
       <!-- Search form -->
-      <form class="form-inline waves-light d-flex align-items-center">
-        <div class="md-form">
-          <span class="material-icons">face</span>
+      <div class="form-inline waves-light d-flex align-items-center">
 
-          <span class="material-icons notification-label">
-            notifications
-          </span>
-          <span class="material-icons login-label">
+        <span class="material-icons material-icons-animation-1">face</span>
+
+        <span class="material-icons material-icons-animation-1 notification-label">
+          notifications
+        </span>
+        <button (click)="toggleLogin()">
+          <span class="material-icons material-icons-animation-1 login-label">
             login
           </span>
-          <span class="material-icons logout-label">
-            logout
-          </span>
-        </div>
-      </form>
+        </button>
+        <span class="material-icons material-icons-animation-1 logout-label">
+          logout
+        </span>
+      </div>
+
     </links>
     <!-- Collapsible content -->
 

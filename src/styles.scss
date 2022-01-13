@@ -31,6 +31,7 @@ body {
   );
   padding-top: 75px;
   font-family: $font-poppins;
+  color: $clr-white-100;
 }
 
 ::-webkit-scrollbar {
@@ -93,29 +94,64 @@ input[type="reset"] {
   cursor: pointer;
   outline: inherit;
 }
+
+form button,
+form input[type="submit"],
+form input[type="reset"] {
+  background: $clr-secondary-100;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  color: $clr-white-200;
+  border: none;
+  padding: 7px 15px;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  border-radius: $fancy-border-1;
+  transition: $transition-time;
+}
+
+form button:hover,
+form input[type="submit"],
+form input[type="reset"] {
+  color: $clr-white-100;
+  border-radius: 25% 75% 75% 25% / 50% 50% 50% 50%;
+}
+
+form input[type="text"] {
+  border-radius: $border-mild;
+  border: 0.1em #5c5c5c solid;
+  background: #1c1c1c;
+  color: white;
+  padding: 0.2em 0.7em;
+  width:100%;
+}
+
+
 // Material Icons Start
-.material-icons {
+.material-icons-animation-1 {
   position: relative;
   padding: 15px;
 
-  transition: 0.5s;
+  transition: $transition-time;
   color: $clr-text-skyblue;
 }
-.material-icons:hover {
+.material-icons-animation-1:hover {
   color: #fff;
 }
 
-.material-icons::before {
+.material-icons-animation-1::before {
   content: "";
   inset: 0;
   border-radius: 5px;
-  transition: 0.5s;
+  transition: $transition-time;
   transform: translateY(-20px);
   opacity: 0;
   position: absolute;
 }
 
-.material-icons:hover::before {
+.material-icons-animation-1:hover::before {
   content: "";
   background-image: linear-gradient(
     to right top,
@@ -149,20 +185,20 @@ input[type="reset"] {
 .next-month::after {
   content: "NEXT";
 }
-.material-icons::after {
+.material-icons-animation-1::after {
   left: 0;
   right: 0;
   text-align: center;
   font-size: 10px;
   font-weight: bolder;
   font-family: "Courier New", Courier, monospace;
-  transition: 0.5s;
+  transition: $transition-time;
   transform: translateY(80px);
   opacity: 0;
   position: absolute;
 }
-.material-icons:hover::after {
-  transition: 0.5s;
+.material-icons-animation-1:hover::after {
+  transition: $transition-time;
   transform: translateY(47px);
   opacity: 1;
   position: absolute;
@@ -251,7 +287,7 @@ input[type="reset"] {
     opacity: 1;
   }
 
-  .material-icons {
+  .material-icons-animation-1 {
     margin-left: 20px;
   }
   .bookmebtn:hover::before {
@@ -479,5 +515,49 @@ input[type="reset"] {
   }
   table > tr > th {
     padding: 10px 2vw;
+  }
+}
+
+#login {
+  button,
+  form input[type="text"] {
+    margin: 0.3em 0em;
+  }
+  .close-btn{
+    inset: 0;
+    left: auto;
+    bottom: auto;
+    position: absolute;
+  }
+  .form-box {
+    width: 241px;
+    left: 0;
+    right: 0;
+    top: 99px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 218px;
+    position: fixed;
+    isolation: isolate;
+    padding: 0.3em;
+    border-radius: 0.5em;
+    border: 0.1em solid #8e8e8e;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 10000;
+  }
+
+  .form-box::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: hsl(0 0% 0% / 0.10);
+    z-index: -1;
+  }
+  @supports (backdrop-filter: blur(0.1em)) {
+    .form-box::before {
+      backdrop-filter: blur(0.3em);
+    }
   }
 }
