@@ -1,0 +1,268 @@
+<section id="preconsultform">
+    <form [formGroup]="preConsultForm" (ngSubmit)="submit(preConsultForm.value)">
+
+        <div class="container mt-3">
+            <div class="row">
+                <div class="col">
+                    <h1>Pre-Consult form</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md">
+                    <mat-form-field>
+                        <input matInput placeholder="Your name" formControlName="name">
+                        <mat-error
+                            *ngIf="!preConsultForm.controls['name'].valid && preConsultForm.controls['name'].touched">
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+
+                <div class="col-md">
+                    <mat-form-field>
+                        <input matInput placeholder="Phone number" formControlName="phone">
+                        <mat-error
+                            *ngIf="!preConsultForm.controls['phone'].valid && preConsultForm.controls['phone'].touched">
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md">
+                    <mat-form-field>
+                        <input matInput placeholder="Date of birth" formControlName="dob">
+                        <mat-error
+                            *ngIf="!preConsultForm.controls['dob'].valid && preConsultForm.controls['dob'].touched">
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+
+                <div class="col-md">
+                    <mat-form-field>
+                        <input matInput placeholder="Email address" formControlName="email">
+                        <mat-error
+                            *ngIf="!preConsultForm.controls['email'].valid && preConsultForm.controls['email'].touched">
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            <!-- <mat-slider min="1" max="5" step="0.5" value="1.5"></mat-slider> -->
+            <div class="row">
+                <div class="col">
+                    <p>Choose your primary health and fitness goal:</p>
+                    <div class="space-between" formGroupName="fitnessGoals">
+                        <mat-checkbox formControlName="weightLoss" value="1">Weight loss
+                        </mat-checkbox>
+                        <mat-checkbox formControlName="strength" value="1">Strength
+                        </mat-checkbox>
+                        <mat-checkbox formControlName="bodyShape" value="1">Body Shape
+                        </mat-checkbox>
+                        <mat-checkbox formControlName="sports" value="1">Sports
+                        </mat-checkbox>
+                        <mat-checkbox formControlName="health" value="1">Health
+                        </mat-checkbox>
+                        <mat-checkbox formControlName="injuryRecovery" value="1">Injury
+                            Recovery</mat-checkbox>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="space-1"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md">
+                    <h1>LIFESTYLE</h1>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md">
+                    <mat-form-field>
+                        <input matInput placeholder="Occupation" formControlName="occupation">
+                        <mat-error
+                            *ngIf="!preConsultForm.controls['occupation'].valid && preConsultForm.controls['occupation'].touched">
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <p>Activity Level</p>
+                    <div class="space-between" formGroupName="activityLevel">
+                        <mat-checkbox formControlName="sedentary" value="1">Sedentary
+                        </mat-checkbox>
+                        <mat-checkbox formControlName="moderate" value="1">Moderate
+                        </mat-checkbox>
+                        <mat-checkbox formControlName="active" value="1">Active
+                        </mat-checkbox>
+                        <mat-checkbox formControlName="highlyActive" value="1">Highly Active
+                        </mat-checkbox>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <p>Do you smoke:</p>
+                    <div class="space-between" formGroupName="smoke">
+                        <mat-checkbox formControlName="smokeYes" value="1">Yes
+                        </mat-checkbox>
+                        <mat-checkbox formControlName="smokeNo" value="1">No
+                        </mat-checkbox>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <p>Do you drink alcohol regularly:
+                    </p>
+                    <div class="space-between" formGroupName="drink">
+                        <mat-checkbox formControlName="drinkYes" value="1">Yes
+                        </mat-checkbox>
+                        <mat-checkbox formControlName="drinkNo" value="1">No
+                        </mat-checkbox>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="space-1"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md">
+                    <h1>INJURIES / MEDICATIONS</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md">
+                    <p>Have you ever been diagnosed with any significant medical conditions or injuries:
+                        (fill in text box)
+                    </p>
+                    <mat-form-field>
+                        <textarea matInput placeholder="Any past injuries..." formControlName="injuries"></textarea>
+                        <mat-error
+                            *ngIf="!preConsultForm.controls['injuries'].valid && preConsultForm.controls['injuries'].touched">
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md">
+                    <p>Do you have any current medical conditions or injuries that will affect your training:
+                    </p>
+                    <mat-form-field>
+                        <textarea matInput placeholder="Current medical conditions..."
+                            formControlName="injuries"></textarea>
+                        <mat-error
+                            *ngIf="!preConsultForm.controls['injuries'].valid && preConsultForm.controls['injuries'].touched">
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md">
+                    <h1>EXERCISE EXPERIENCE</h1>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md">
+                    <p>Have you been a member of a gym in the past?</p>
+                    <div class="space-between" formGroupName="exercise">
+                        <mat-checkbox formControlName="exerciseYes" value="1">Yes
+                        </mat-checkbox>
+                        <mat-checkbox formControlName="exerciseNo" value="1">No
+                        </mat-checkbox>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md">
+                    <p>If Yes, How long were you a member for? (fill in text box)</p>
+                    <mat-form-field>
+                        <input matInput placeholder="How long were you member?" formControlName="howLong">
+                        <mat-error
+                            *ngIf="!preConsultForm.controls['howLong'].valid && preConsultForm.controls['howLong'].touched">
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md">
+                    <p>Have you had Personal Training before?</p>
+                    <div class="space-between" formGroupName="personalTraining">
+                        <mat-checkbox formControlName="personalTrainingYes" value="1">Yes
+                        </mat-checkbox>
+                        <mat-checkbox formControlName="personalTrainingNo" value="1">No
+                        </mat-checkbox>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md">
+                    <p>If Yes, Please describe your experience? (fill in text box)
+                    </p>
+                    <mat-form-field>
+                        <input matInput placeholder="Describe your experience?" formControlName="ptExperienceOnYes">
+                        <mat-error
+                            *ngIf="!preConsultForm.controls['ptExperienceOnYes'].valid && preConsultForm.controls['ptExperienceOnYes'].touched">
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md">
+                    <p>If No, Have you thought about doing Personal Training sessions before?
+                    </p>
+                    <div class="space-between" formGroupName="personalTraining">
+                        <mat-checkbox formControlName="personalTrainingYes" value="1">Yes
+                        </mat-checkbox>
+                        <mat-checkbox formControlName="personalTrainingNo" value="1">No
+                        </mat-checkbox>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md">
+                    <p>On a scale of 1 to 10 please describe the following:
+                    </p>
+                    <span>Stress</span>
+                    <div class="space-between" formGroupName="personalTraining">
+                        <mat-slider thumbLabel tickInterval="1" step="1" min="0" max="10" aria-label="units">Sleep
+                        </mat-slider>
+                    </div>
+                    <span>Sleep</span>
+                    <div class="space-between" formGroupName="personalTraining">
+                        <mat-slider thumbLabel tickInterval="1" step="1" min="0" max="10" aria-label="units">Sleep
+                        </mat-slider>
+                    </div>
+                    <span>Energy level</span>
+                    <div class="space-between" formGroupName="personalTraining">
+                        <mat-slider thumbLabel tickInterval="1" step="1" min="0" max="10" aria-label="units">Sleep
+                        </mat-slider>
+                    </div>
+                    <span>Motivation</span>
+                    <div class="space-between" formGroupName="personalTraining">
+                        <mat-slider thumbLabel tickInterval="1" step="1" min="0" max="10" aria-label="units">Sleep
+                        </mat-slider>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </form>
+</section>
+<!-- <section>
+    {{preConsultForm.value | json}}
+</section> -->

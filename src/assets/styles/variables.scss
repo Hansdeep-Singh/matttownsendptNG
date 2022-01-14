@@ -15,10 +15,12 @@ $clr-bg-body: $clr-white-100;
 $font-size-display-1: clamp(2.5rem, 5.5vw, 8.3rem);
 $font-size-h1: max(4vw, 2em, 2rem);
 $font-size-h2: clamp(1.2rem, 2vw, 4.5rem);
-$font-size-paragraph: clamp(1rem, 1.5vw, 3rem);
+$font-size-paragraph: clamp(1rem, 1.5vw, 1.2rem);
+$font-size-small:0.7em;
 //Theme Dark
 $clr-bg-body: #666666;
-$clr-secondary-100: #f9440a;
+$clr-secondary-100: hsl(15, 95%, 51%);
+$clr-secondary-200: hsl(15, 95%, 61%);
 $clr-primary-100: #61597c;
 $clr-text-secondary: #868686;
 $clr-text-skyblue: #89d2fd;
@@ -29,8 +31,48 @@ $clr-bg-orchid: #b14ec2;
 $clr-bg-skyblue: #89d2fd;
 $transition-time: 0.5s;
 
+//Colour error
+$clr-bright-orange:hsl(38, 93%, 54%);
+
 // Borders
 $border-circle: 50%;
 $border-mild:10%;
-$fancy-border-1: 0% 100% 0% 100% / 83% 17% 83% 17%;
+$fancy-border-1: 50% 10% / 25%;
 $fancy-border-2: 83% 17% 83% 17% / 0% 100% 0% 100%;
+$fancy-border-3: 0% 100% 0% 100% / 83% 17% 83% 17%;
+$fancy-border-4: 25% / 50% 25%;
+$fancy-border-5: 10%;
+$fancy-border-6: 90% / 50% 15%;
+
+$custom-material-primary: (
+    50 : #e8eaf6,
+    100 : #c5cbe9,
+    200 : #9fa8da,
+    300 : #7985cb,
+    400 : #5c6bc0,
+    500 : #3f51b5,
+    600 : #394aae,
+    700 : #3140a5,
+    800 : #29379d,
+    900 : #1b278d,
+    A100 : #c6cbff,
+    A200 : #939dff,
+    A400 : #606eff,
+    A700 : #4757ff,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #ffffff,
+        A700 : #ffffff,
+    )
+);

@@ -2,12 +2,17 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CalendarComponent } from './calendar/calendar.component';
 import { HomeComponent } from './home/home.component';
+import { PreconsultformComponent } from './preconsultform/preconsultform.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
   {
     path: 'book',
     component: CalendarComponent,
+  },
+  {
+    path: 'form',
+    component: PreconsultformComponent,
   },
 ];
 

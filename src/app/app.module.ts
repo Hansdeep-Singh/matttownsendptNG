@@ -19,6 +19,11 @@ import { MdbScrollspyModule } from 'mdb-angular-ui-kit/scrollspy';
 import { MdbTabsModule } from 'mdb-angular-ui-kit/tabs';
 import { MdbTooltipModule } from 'mdb-angular-ui-kit/tooltip';
 import { MdbValidationModule } from 'mdb-angular-ui-kit/validation';
+//Angular Material Free
+import {MatSliderModule} from '@angular/material/slider';
+import {MatInputModule} from '@angular/material/input';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+
 import { AnimateOnScrollModule } from 'ng2-animate-on-scroll';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
@@ -26,8 +31,9 @@ import { ParallaxModule, ParallaxConfig } from 'ngx-parallax';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CalendarComponent } from './calendar/calendar.component';
 import { LoginComponent } from './login/login.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
+import { PreconsultformComponent } from './preconsultform/preconsultform.component';
 
 
 
@@ -39,11 +45,15 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
     HomeComponent,
     CalendarComponent,
     LoginComponent,
+    PreconsultformComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    MatInputModule,
+    MatCheckboxModule,
+    FormsModule,
     MdbAccordionModule,
     MdbCarouselModule,
     MdbCheckboxModule,
@@ -59,6 +69,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
     MdbTabsModule,
     MdbTooltipModule,
     MdbValidationModule,
+    MatSliderModule,
     ParallaxModule,
     BrowserAnimationsModule,
     HttpClientModule,

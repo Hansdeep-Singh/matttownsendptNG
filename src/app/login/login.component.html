@@ -4,17 +4,32 @@
         <div class="form-box">
             <div class="close-btn">
                 <a (click)="closeLogin()">
-                <span class="material-icons">
-                    close
-                  </span>
+                    <span class="material-icons">
+                        close
+                    </span>
                 </a>
             </div>
             <h3>Log in</h3>
-            <div class="inputbox">
-                <input id="userName" type="text" name="userName" formControlName="userName" required>
+            <div class="input-box">
+                <div [@labelTrigger]="animateUserName?'right':'left'" class="label-input">
+                    <div class="label-input-error"
+                        *ngIf="loginForm.get('userName')?.errors &&(loginForm.get('userName')?.touched || loginForm.get('userName')?.dirty); else labelUserName">
+                        User Name is required</div>
+                    <ng-template #labelUserName>User name</ng-template>
+                </div>
+                <input id="userName" (focus)="animateUserNameFn()" (mouseover)="animateUserNameFn()" type="text"
+                    name="userName" formControlName="userName" required>
             </div>
-            <div class="inputbox">
-                <input id="password" type="text" name="password" formControlName="password" required>
+            <div class="input-box">
+                <div [@labelTrigger]="animatePassword?'right':'left'" class="label-input">
+
+                    <div class="label-input-error"
+                        *ngIf="loginForm.get('password')?.errors &&(loginForm.get('password')?.touched || loginForm.get('password')?.dirty); else labelPassword">
+                        Password is required</div>
+                    <ng-template #labelPassword>Password</ng-template>
+                </div>
+                <input id="password" (focus)="animatePasswordFn()" (mouseover)="animatePasswordFn()" type="text"
+                    name="password" formControlName="password" required>
             </div>
             <div class="inputbox">
                 <div class="form-check form-switch">
