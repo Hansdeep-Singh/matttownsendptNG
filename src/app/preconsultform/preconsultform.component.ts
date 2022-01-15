@@ -12,18 +12,13 @@ import {
   styleUrls: ['./preconsultform.component.scss'],
 })
 export class PreconsultformComponent implements OnInit {
-  constructor(private fb: FormBuilder) {
-    // this.preConsultForm = fb.group({
-    //   weightLoss: false,
-    //   strength: false,
-    //   bodyShape: false,
-    //   sports: false,
-    //   health: false,
-    //   injuryRecovery: false,
-    // });
+  constructor(private fb: FormBuilder) {}
+
+  ngOnInit(): void {
+    console.log(this.preConsultForm.value);
   }
 
-  ngOnInit(): void {}
+  checks: boolean = true;
 
   preConsultForm = this.fb.group({
     name: [null, Validators.required],
@@ -39,47 +34,35 @@ export class PreconsultformComponent implements OnInit {
       injuryRecovery: [''],
     }),
     occupation: ['', Validators.required],
-    activityLevel: this.fb.group({
-      sedentary: [''],
-      moderate: [''],
-      active: [''],
-      hightlyActive: [''],
-    }),
-
-    smoke: this.fb.group({
-      smokeYes: [''],
-      smokeNo: [''],
-    }),
-
-    drink: this.fb.group({
-      drinkYes: [''],
-      drinkNo: [''],
-    }),
-    injuries:[''],
-    medical:[''],
-    exercise: this.fb.group({
-      exerciseYes: [''],
-      exerciseNo: [''],
-    }),
-    howLong:[''],
+    activityLevel: ['', Validators.required],
+    smoke: ['', Validators.required],
+    drink: ['', Validators.required],
+    
+    injuries: [''],
+    medical: [''],
+    exercise: ['', Validators.required],
+    howLong: [''],
     personalTraining: this.fb.group({
       personalTrainingYes: [''],
       personalTrainingNo: [''],
     }),
-    ptExperienceOnYes:[''],
+    ptExperienceOnYes: [''],
     ptExperienceOnNo: this.fb.group({
       anyThoughtsYes: [''],
       anyThoughtsNo: [''],
     }),
   });
-  
 
-  getErrorEmail() {
-    
-  }
-  submit(post:any){
+  getErrorEmail() {}
+  submit(post: any) {
     alert(post);
   }
 
   animateName: boolean | undefined;
+}
+
+function checkboxse(formGroup: FormGroup) {
+  Object.keys(formGroup.controls).forEach((key) => {
+    console.log(key);
+  });
 }

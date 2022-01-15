@@ -23,6 +23,8 @@ import { MdbValidationModule } from 'mdb-angular-ui-kit/validation';
 import {MatSliderModule} from '@angular/material/slider';
 import {MatInputModule} from '@angular/material/input';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatRadioModule} from '@angular/material/radio';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 
 import { AnimateOnScrollModule } from 'ng2-animate-on-scroll';
 import { HeaderComponent } from './header/header.component';
@@ -53,6 +55,8 @@ import { PreconsultformComponent } from './preconsultform/preconsultform.compone
     ReactiveFormsModule,
     MatInputModule,
     MatCheckboxModule,
+    MatRadioModule,
+    MatSlideToggleModule,
     FormsModule,
     MdbAccordionModule,
     MdbCarouselModule,

@@ -1,6 +1,5 @@
 <section id="preconsultform">
     <form [formGroup]="preConsultForm" (ngSubmit)="submit(preConsultForm.value)">
-
         <div class="container mt-3">
             <div class="row">
                 <div class="col">
@@ -70,7 +69,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md">
-                    <h1>LIFESTYLE</h1>
+                    <h2>LIFESTYLE</h2>
                 </div>
             </div>
 
@@ -88,41 +87,24 @@
             <div class="row">
                 <div class="col">
                     <p>Activity Level</p>
-                    <div class="space-between" formGroupName="activityLevel">
-                        <mat-checkbox formControlName="sedentary" value="1">Sedentary
-                        </mat-checkbox>
-                        <mat-checkbox formControlName="moderate" value="1">Moderate
-                        </mat-checkbox>
-                        <mat-checkbox formControlName="active" value="1">Active
-                        </mat-checkbox>
-                        <mat-checkbox formControlName="highlyActive" value="1">Highly Active
-                        </mat-checkbox>
+                    <div>
+                        <mat-radio-group class="space-between" formControlName="activityLevel"
+                            aria-label="Select an option">
+                            <mat-radio-button value="Sedentary">Sedentary</mat-radio-button>
+                            <mat-radio-button value="Moderate">Moderate</mat-radio-button>
+                            <mat-radio-button value="Active">Active</mat-radio-button>
+                            <mat-radio-button value="Highly Active">HighlyActive</mat-radio-button>
+                        </mat-radio-group>
                     </div>
                 </div>
             </div>
 
             <div class="row">
-                <div class="col">
-                    <p>Do you smoke:</p>
-                    <div class="space-between" formGroupName="smoke">
-                        <mat-checkbox formControlName="smokeYes" value="1">Yes
-                        </mat-checkbox>
-                        <mat-checkbox formControlName="smokeNo" value="1">No
-                        </mat-checkbox>
-                    </div>
+                <div class="col-md">
+                    <mat-slide-toggle formControlName="smoke">Do you smoke?</mat-slide-toggle>
                 </div>
-            </div>
-
-            <div class="row">
-                <div class="col">
-                    <p>Do you drink alcohol regularly:
-                    </p>
-                    <div class="space-between" formGroupName="drink">
-                        <mat-checkbox formControlName="drinkYes" value="1">Yes
-                        </mat-checkbox>
-                        <mat-checkbox formControlName="drinkNo" value="1">No
-                        </mat-checkbox>
-                    </div>
+                <div class="col-md">
+                    <mat-slide-toggle formControlName="drink">Do you drink alcohol regularly?</mat-slide-toggle>
                 </div>
             </div>
 
@@ -131,7 +113,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md">
-                    <h1>INJURIES / MEDICATIONS</h1>
+                    <h2>INJURIES / MEDICATIONS</h2>
                 </div>
             </div>
             <div class="row">
@@ -166,19 +148,13 @@
         <div class="container">
             <div class="row">
                 <div class="col-md">
-                    <h1>EXERCISE EXPERIENCE</h1>
+                    <h2>EXERCISE EXPERIENCE</h2>
                 </div>
             </div>
 
             <div class="row">
                 <div class="col-md">
-                    <p>Have you been a member of a gym in the past?</p>
-                    <div class="space-between" formGroupName="exercise">
-                        <mat-checkbox formControlName="exerciseYes" value="1">Yes
-                        </mat-checkbox>
-                        <mat-checkbox formControlName="exerciseNo" value="1">No
-                        </mat-checkbox>
-                    </div>
+                    <mat-slide-toggle formControlName="exercise">Have you been a member of a gym in the past?</mat-slide-toggle>
                 </div>
             </div>
 
@@ -263,6 +239,6 @@
 
     </form>
 </section>
-<!-- <section>
+<section>
     {{preConsultForm.value | json}}
-</section> -->
+</section>
