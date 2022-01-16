@@ -5,7 +5,6 @@
 // Plus imports for other components in your app.
 @import "./assets/styles/variables.scss";
 
-
 // Hans to generate the pallete use the following link
 //http://mcg.mbitson.com/#!?mcgpalette0=%233f51b5
 // Include the common styles for Angular Material. We include this here so that you only
@@ -17,9 +16,13 @@
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
 
-
 $matttownsendNG-primary: mat.define-palette($custom-primary-material);
-$matttownsendNG-accent: mat.define-palette($custom-accent-material, A200, A100, A400);
+$matttownsendNG-accent: mat.define-palette(
+  $custom-accent-material,
+  A200,
+  A100,
+  A400
+);
 
 // The warn palette is optional (defaults to red).
 $matttownsendNG-warn: mat.define-palette($custom-warn-material);
@@ -636,8 +639,12 @@ form input[type="text"] {
     flex-wrap: wrap;
     justify-content: space-between;
   }
-  .row{
-    margin-bottom:1em;
+  .row {
+    margin-bottom: 1em;
+  }
+  .acttable {
+    border: 1px rgb(104, 104, 104) solid;
+    margin:5px;
   }
 }
 
@@ -645,6 +652,6 @@ mat-form-field {
   width: 100%;
 }
 
-mat-slider{
-  width:100%;
+mat-slider {
+  width: 100%;
 }

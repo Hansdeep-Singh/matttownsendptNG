@@ -25,6 +25,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {MatTableModule} from '@angular/material/table';
 
 import { AnimateOnScrollModule } from 'ng2-animate-on-scroll';
 import { HeaderComponent } from './header/header.component';
@@ -57,6 +58,7 @@ import { PreconsultformComponent } from './preconsultform/preconsultform.compone
     MatCheckboxModule,
     MatRadioModule,
     MatSlideToggleModule,
+    MatTableModule,
     FormsModule,
     MdbAccordionModule,
     MdbCarouselModule,

@@ -99,7 +99,7 @@
                 </div>
             </div>
 
-            <div class="row">
+            <div class="row mt-3">
                 <div class="col-md">
                     <mat-slide-toggle formControlName="smoke">Do you smoke?</mat-slide-toggle>
                 </div>
@@ -154,13 +154,14 @@
 
             <div class="row">
                 <div class="col-md">
-                    <mat-slide-toggle formControlName="exercise">Have you been a member of a gym in the past?</mat-slide-toggle>
+                    <mat-slide-toggle (change)="toggleMember($event)" formControlName="exercise">Have you been a member
+                        of a gym in the past?</mat-slide-toggle>
                 </div>
             </div>
 
-            <div class="row">
+            <div *ngIf="showMember" class="row">
                 <div class="col-md">
-                    <p>If Yes, How long were you a member for? (fill in text box)</p>
+                    <p>How long were you a member for? (fill in text box)</p>
                     <mat-form-field>
                         <input matInput placeholder="How long were you member?" formControlName="howLong">
                         <mat-error
@@ -169,42 +170,32 @@
                     </mat-form-field>
                 </div>
             </div>
-
+            <!-- LANDMARK -->
             <div class="row">
                 <div class="col-md">
-                    <p>Have you had Personal Training before?</p>
-                    <div class="space-between" formGroupName="personalTraining">
-                        <mat-checkbox formControlName="personalTrainingYes" value="1">Yes
-                        </mat-checkbox>
-                        <mat-checkbox formControlName="personalTrainingNo" value="1">No
-                        </mat-checkbox>
-                    </div>
+                    <mat-slide-toggle (change)="togglePersonalTraining($event)" formControlName="personalTraining">Have
+                        you had Personal Training before?</mat-slide-toggle>
                 </div>
             </div>
 
-            <div class="row">
+            <div *ngIf="showExperience" class="row">
                 <div class="col-md">
-                    <p>If Yes, Please describe your experience? (fill in text box)
+                    <p>Please describe your experience? (fill in text box)
                     </p>
                     <mat-form-field>
-                        <input matInput placeholder="Describe your experience?" formControlName="ptExperienceOnYes">
+                        <input matInput placeholder="Describe your experience?"
+                            formControlName="personalTrainingExperience">
                         <mat-error
-                            *ngIf="!preConsultForm.controls['ptExperienceOnYes'].valid && preConsultForm.controls['ptExperienceOnYes'].touched">
+                            *ngIf="!preConsultForm.controls['personalTrainingExperience'].valid && preConsultForm.controls['personalTrainingExperience'].touched">
                         </mat-error>
                     </mat-form-field>
                 </div>
             </div>
 
-            <div class="row">
+            <div *ngIf="!showExperience" class="row">
                 <div class="col-md">
-                    <p>If No, Have you thought about doing Personal Training sessions before?
-                    </p>
-                    <div class="space-between" formGroupName="personalTraining">
-                        <mat-checkbox formControlName="personalTrainingYes" value="1">Yes
-                        </mat-checkbox>
-                        <mat-checkbox formControlName="personalTrainingNo" value="1">No
-                        </mat-checkbox>
-                    </div>
+                    <mat-slide-toggle formControlName="trainingSession">Have you thought about doing Personal Training
+                        sessions before?</mat-slide-toggle>
                 </div>
             </div>
 
@@ -213,28 +204,147 @@
                     <p>On a scale of 1 to 10 please describe the following:
                     </p>
                     <span>Stress</span>
-                    <div class="space-between" formGroupName="personalTraining">
-                        <mat-slider thumbLabel tickInterval="1" step="1" min="0" max="10" aria-label="units">Sleep
-                        </mat-slider>
-                    </div>
+                    <mat-slider thumbLabel formControlName="stress" tickInterval="1" step="1" min="0" max="10"
+                        aria-label="units">
+                    </mat-slider>
                     <span>Sleep</span>
-                    <div class="space-between" formGroupName="personalTraining">
-                        <mat-slider thumbLabel tickInterval="1" step="1" min="0" max="10" aria-label="units">Sleep
-                        </mat-slider>
-                    </div>
+                    <mat-slider thumbLabel formControlName="sleep" tickInterval="1" step="1" min="0" max="10"
+                        aria-label="units">
+                    </mat-slider>
                     <span>Energy level</span>
-                    <div class="space-between" formGroupName="personalTraining">
-                        <mat-slider thumbLabel tickInterval="1" step="1" min="0" max="10" aria-label="units">Sleep
-                        </mat-slider>
-                    </div>
+                    <mat-slider thumbLabel formControlName="energy" tickInterval="1" step="1" min="0" max="10"
+                        aria-label="units">
+                    </mat-slider>
                     <span>Motivation</span>
-                    <div class="space-between" formGroupName="personalTraining">
-                        <mat-slider thumbLabel tickInterval="1" step="1" min="0" max="10" aria-label="units">Sleep
-                        </mat-slider>
+                    <mat-slider thumbLabel formControlName="motivation" tickInterval="1" step="1" min="0" max="10"
+                        aria-label="units">
+                    </mat-slider>
+                </div>
+            </div>
+            <div formGroupName="currentExercise" class="container">
+                <div formGroupName="monday" class="row acttable">
+                    <div class="col-md-2 d-flex align-items-center">
+                        Monday
+                    </div>
+                    <div class="col-md-8">
+                        <mat-form-field>
+                            <input matInput placeholder="Activities" formControlName="mondayActivities">
+                        </mat-form-field>
+                    </div>
+                    <div class="col-md-2">
+                        <mat-form-field>
+                            <input matInput formControlName="mondayEffort" placeholder="Effort"
+                               >
+                        </mat-form-field>
+
+                    </div>
+                </div>
+                <div formGroupName="tuesday" class="row acttable">
+                    <div class="col-md-2 d-flex align-items-center">
+                        Tuesday
+                    </div>
+                    <div class="col-md-8">
+                        <mat-form-field>
+                            <input matInput placeholder="Activities" formControlName="tuesdayActivities">
+                        </mat-form-field>
+                    </div>
+                    <div class="col-md-2">
+                        <mat-form-field>
+                            <input matInput formControlName="tuesdayEffort" placeholder="Effort">
+                        </mat-form-field>
+
+                    </div>
+                </div>
+                <div formGroupName="wednesday" class="row acttable">
+                    <div class="col-md-2 d-flex align-items-center">
+                        Wednesday
+                    </div>
+                    <div class="col-md-8">
+                        <mat-form-field>
+                            <input matInput placeholder="Activities" formControlName="wednesdayActivities">
+                        </mat-form-field>
+                    </div>
+                    <div class="col-md-2">
+                        <mat-form-field>
+                            <input matInput formControlName="wednesdayEffort" placeholder="Effort">
+                        </mat-form-field>
+
+                    </div>
+                </div>
+                <div formGroupName="thursday" class="row acttable">
+                    <div class="col-md-2 d-flex align-items-center">
+                        Thrusday
+                    </div>
+                    <div class="col-md-8">
+                        <mat-form-field>
+                            <input matInput placeholder="Activities" formControlName="thursdayActivities">
+                        </mat-form-field>
+                    </div>
+                    <div class="col-md-2">
+                        <mat-form-field>
+                            <input matInput formControlName="thursdayEffort" placeholder="Effort">
+                        </mat-form-field>
+
+                    </div>
+                </div>
+                <div formGroupName="friday" class="row acttable">
+                    <div class="col-md-2 d-flex align-items-center">
+                        Friday
+                    </div>
+                    <div class="col-md-8">
+                        <mat-form-field>
+                            <input matInput placeholder="Activities" formControlName="fridayActivities">
+                        </mat-form-field>
+                    </div>
+                    <div class="col-md-2">
+                        <mat-form-field>
+                            <input matInput formControlName="fridayEffort" placeholder="Effort">
+                        </mat-form-field>
+
+                    </div>
+                </div>
+                <div formGroupName="saturday" class="row acttable">
+                    <div class="col-md-2 d-flex align-items-center">
+                        Monday
+                    </div>
+                    <div class="col-md-8">
+                        <mat-form-field>
+                            <input matInput placeholder="Activities" formControlName="saturdayActivities">
+                        </mat-form-field>
+                    </div>
+                    <div class="col-md-2">
+                        <mat-form-field>
+                            <input matInput formControlName="saturdayEffort" placeholder="Effort">
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div formGroupName="sunday" class="row acttable">
+                    <div class="col-md-2 d-flex align-items-center">
+                        Monday
+                    </div>
+                    <div class="col-md-8">
+                        <mat-form-field>
+                            <input matInput placeholder="Activities" formControlName="sundayActivities">
+                        </mat-form-field>
+                    </div>
+                    <div class="col-md-2">
+                        <mat-form-field>
+                            <input matInput formControlName="sundayEffort" placeholder="Effort">
+                        </mat-form-field>
                     </div>
                 </div>
             </div>
+            <div class="row mt-5">
+                <div class="col text-center">
+                    <button type="submit" 
+                    
+                    >Login</button>
+                </div>
+            </div>
         </div>
+
+
+
 
 
     </form>
