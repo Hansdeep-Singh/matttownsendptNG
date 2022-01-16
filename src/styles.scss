@@ -637,7 +637,6 @@ form input[type="text"] {
   .space-between {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
   }
   .row {
     margin-bottom: 1em;
@@ -646,6 +645,15 @@ form input[type="text"] {
     border: 1px rgb(104, 104, 104) solid;
     margin:5px;
   }
+  .day{background-color: $clr-primary-100;}
+}
+
+mat-checkbox{
+  margin-right: 3vw;
+}
+mat-slider{margin-top:1em;}
+mat-radio-button{
+  margin-right: 3vw;
 }
 
 mat-form-field {

@@ -3,9 +3,15 @@
         <div class="container mt-3">
             <div class="row">
                 <div class="col">
-                    <h1>Pre-Consult form</h1>
+                    <h1 class="text-center"><u>Pre-Consult form</u></h1>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-md">
+                    <h2>GENERAL INFO</h2>
+                </div>
+            </div>
+
             <div class="row">
                 <div class="col-md">
                     <mat-form-field>
@@ -49,17 +55,17 @@
                 <div class="col">
                     <p>Choose your primary health and fitness goal:</p>
                     <div class="space-between" formGroupName="fitnessGoals">
-                        <mat-checkbox formControlName="weightLoss" value="1">Weight loss
+                        <mat-checkbox formControlName="weightLoss">Weight loss
                         </mat-checkbox>
-                        <mat-checkbox formControlName="strength" value="1">Strength
+                        <mat-checkbox formControlName="strength">Strength
                         </mat-checkbox>
-                        <mat-checkbox formControlName="bodyShape" value="1">Body Shape
+                        <mat-checkbox formControlName="bodyShape">Body Shape
                         </mat-checkbox>
-                        <mat-checkbox formControlName="sports" value="1">Sports
+                        <mat-checkbox formControlName="sports">Sports
                         </mat-checkbox>
-                        <mat-checkbox formControlName="health" value="1">Health
+                        <mat-checkbox formControlName="health">Health
                         </mat-checkbox>
-                        <mat-checkbox formControlName="injuryRecovery" value="1">Injury
+                        <mat-checkbox formControlName="injuryRecovery">Injury
                             Recovery</mat-checkbox>
                     </div>
                 </div>
@@ -103,8 +109,10 @@
                 <div class="col-md">
                     <mat-slide-toggle formControlName="smoke">Do you smoke?</mat-slide-toggle>
                 </div>
-                <div class="col-md">
-                    <mat-slide-toggle formControlName="drink">Do you drink alcohol regularly?</mat-slide-toggle>
+                <div class="row mt-3">
+                    <div class="col-md">
+                        <mat-slide-toggle formControlName="drink">Do you drink alcohol regularly?</mat-slide-toggle>
+                    </div>
                 </div>
             </div>
 
@@ -222,8 +230,9 @@
                 </div>
             </div>
             <div formGroupName="currentExercise" class="container">
+                <h2>Describe your current exercise routine:</h2>
                 <div formGroupName="monday" class="row acttable">
-                    <div class="col-md-2 d-flex align-items-center">
+                    <div class="col-md-2 d-flex day  justify-content-center align-items-center">
                         Monday
                     </div>
                     <div class="col-md-8">
@@ -233,14 +242,13 @@
                     </div>
                     <div class="col-md-2">
                         <mat-form-field>
-                            <input matInput formControlName="mondayEffort" placeholder="Effort"
-                               >
+                            <input matInput formControlName="mondayEffort" placeholder="Effort">
                         </mat-form-field>
 
                     </div>
                 </div>
                 <div formGroupName="tuesday" class="row acttable">
-                    <div class="col-md-2 d-flex align-items-center">
+                    <div class="col-md-2 day d-flex  justify-content-center align-items-center">
                         Tuesday
                     </div>
                     <div class="col-md-8">
@@ -256,7 +264,7 @@
                     </div>
                 </div>
                 <div formGroupName="wednesday" class="row acttable">
-                    <div class="col-md-2 d-flex align-items-center">
+                    <div class="col-md-2 day d-flex  justify-content-center align-items-center">
                         Wednesday
                     </div>
                     <div class="col-md-8">
@@ -272,7 +280,7 @@
                     </div>
                 </div>
                 <div formGroupName="thursday" class="row acttable">
-                    <div class="col-md-2 d-flex align-items-center">
+                    <div class="col-md-2 day d-flex  justify-content-center align-items-center">
                         Thrusday
                     </div>
                     <div class="col-md-8">
@@ -288,7 +296,7 @@
                     </div>
                 </div>
                 <div formGroupName="friday" class="row acttable">
-                    <div class="col-md-2 d-flex align-items-center">
+                    <div class="col-md-2 day d-flex  justify-content-center align-items-center">
                         Friday
                     </div>
                     <div class="col-md-8">
@@ -304,8 +312,8 @@
                     </div>
                 </div>
                 <div formGroupName="saturday" class="row acttable">
-                    <div class="col-md-2 d-flex align-items-center">
-                        Monday
+                    <div class="col-md-2 day d-flex  justify-content-center align-items-center">
+                        Saturday
                     </div>
                     <div class="col-md-8">
                         <mat-form-field>
@@ -319,8 +327,8 @@
                     </div>
                 </div>
                 <div formGroupName="sunday" class="row acttable">
-                    <div class="col-md-2 d-flex align-items-center">
-                        Monday
+                    <div class="col-md-2 day d-flex  justify-content-center align-items-center">
+                        Sunday
                     </div>
                     <div class="col-md-8">
                         <mat-form-field>
@@ -336,9 +344,7 @@
             </div>
             <div class="row mt-5">
                 <div class="col text-center">
-                    <button type="submit" 
-                    
-                    >Login</button>
+                    <button type="submit">Submit</button>
                 </div>
             </div>
         </div>
@@ -349,6 +355,6 @@
 
     </form>
 </section>
-<section>
+<!-- <section>
     {{preConsultForm.value | json}}
-</section>
+</section> -->
