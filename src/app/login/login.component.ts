@@ -33,10 +33,11 @@ export class LoginComponent implements OnInit {
   }
 
   submit() {
-    this.apiservice
-      .post(this.loginForm.value, 'Home', 'Login')
-      .subscribe((data) => {
-        alert(data);
-      });
+    console.log(this.loginForm.value);
+    // this.apiservice
+    //   .post(this.loginForm.value, 'Home', 'Login')
+    //   .subscribe((data) => {
+    //     alert(data);
+    //   });
   }
 }

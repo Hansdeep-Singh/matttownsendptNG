@@ -15,7 +15,7 @@
             <div class="row">
                 <div class="col-md">
                     <mat-form-field>
-                        <input matInput placeholder="Your name" formControlName="name">
+                        <input matInput placeholder="Your name*" formControlName="name">
                         <mat-error
                             *ngIf="!preConsultForm.controls['name'].valid && preConsultForm.controls['name'].touched">
                         </mat-error>
@@ -24,7 +24,7 @@
 
                 <div class="col-md">
                     <mat-form-field>
-                        <input matInput placeholder="Phone number" formControlName="phone">
+                        <input matInput placeholder="Phone number*" formControlName="phone">
                         <mat-error
                             *ngIf="!preConsultForm.controls['phone'].valid && preConsultForm.controls['phone'].touched">
                         </mat-error>
@@ -34,7 +34,7 @@
             <div class="row">
                 <div class="col-md">
                     <mat-form-field>
-                        <input matInput placeholder="Date of birth" formControlName="dob">
+                        <input matInput placeholder="Date of birth*" formControlName="dob">
                         <mat-error
                             *ngIf="!preConsultForm.controls['dob'].valid && preConsultForm.controls['dob'].touched">
                         </mat-error>
@@ -50,7 +50,6 @@
                     </mat-form-field>
                 </div>
             </div>
-            <!-- <mat-slider min="1" max="5" step="0.5" value="1.5"></mat-slider> -->
             <div class="row">
                 <div class="col">
                     <p>Choose your primary health and fitness goal:</p>
@@ -99,7 +98,7 @@
                             <mat-radio-button value="Sedentary">Sedentary</mat-radio-button>
                             <mat-radio-button value="Moderate">Moderate</mat-radio-button>
                             <mat-radio-button value="Active">Active</mat-radio-button>
-                            <mat-radio-button value="Highly Active">HighlyActive</mat-radio-button>
+                            <mat-radio-button value="HighlyActive">Highly Active</mat-radio-button>
                         </mat-radio-group>
                     </div>
                 </div>
@@ -144,9 +143,9 @@
                     </p>
                     <mat-form-field>
                         <textarea matInput placeholder="Current medical conditions..."
-                            formControlName="injuries"></textarea>
+                            formControlName="medical"></textarea>
                         <mat-error
-                            *ngIf="!preConsultForm.controls['injuries'].valid && preConsultForm.controls['injuries'].touched">
+                            *ngIf="!preConsultForm.controls['medical'].valid && preConsultForm.controls['medical'].touched">
                         </mat-error>
                     </mat-form-field>
                 </div>
@@ -162,7 +161,7 @@
 
             <div class="row">
                 <div class="col-md">
-                    <mat-slide-toggle (change)="toggleMember($event)" formControlName="exercise">Have you been a member
+                    <mat-slide-toggle (change)="toggleMember($event)" formControlName="gymMember">Have you been a member
                         of a gym in the past?</mat-slide-toggle>
                 </div>
             </div>
@@ -178,7 +177,6 @@
                     </mat-form-field>
                 </div>
             </div>
-            <!-- LANDMARK -->
             <div class="row">
                 <div class="col-md">
                     <mat-slide-toggle (change)="togglePersonalTraining($event)" formControlName="personalTraining">Have
@@ -206,7 +204,6 @@
                         sessions before?</mat-slide-toggle>
                 </div>
             </div>
-
             <div class="row">
                 <div class="col-md">
                     <p>On a scale of 1 to 10 please describe the following:
@@ -342,19 +339,13 @@
                     </div>
                 </div>
             </div>
+
             <div class="row mt-5">
                 <div class="col text-center">
-                    <button type="submit">Submit</button>
+                    <p class="text-danger" *ngIf="!preConsultForm.valid">Field marked with (*) are required.</p>
+                    <button [disabled]="!preConsultForm.valid" type="submit">Submit</button>
                 </div>
             </div>
         </div>
-
-
-
-
-
     </form>
 </section>
-<!-- <section>
-    {{preConsultForm.value | json}}
-</section> -->

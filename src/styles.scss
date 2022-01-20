@@ -142,6 +142,13 @@ input[type="reset"] {
   outline: inherit;
 }
 
+button:disabled,
+button[disabled] {
+  background-color: $clr-secondary-200;
+opacity:0.4;
+  color: #d8d8d8;
+}
+
 form button,
 form input[type="submit"],
 form input[type="reset"] {
@@ -173,6 +180,20 @@ form input[type="text"] {
   color: white;
   padding: 0.2em 0.7em;
   width: 100%;
+}
+
+
+// form input:-webkit-autofill {
+//   border: 3px solid blue;
+//   background-color: blue;
+// }
+// form input:autofill {
+//   border: 3px solid blue;
+//   background-color: blue;
+// }
+
+form input:-webkit-autofill:focus {
+  background-color: yellow;
 }
 
 // Material Icons Start
@@ -643,16 +664,20 @@ form input[type="text"] {
   }
   .acttable {
     border: 1px rgb(104, 104, 104) solid;
-    margin:5px;
+    margin: 5px;
   }
-  .day{background-color: $clr-primary-100;}
+  .day {
+    background-color: $clr-primary-100;
+  }
 }
 
-mat-checkbox{
+mat-checkbox {
   margin-right: 3vw;
 }
-mat-slider{margin-top:1em;}
-mat-radio-button{
+mat-slider {
+  margin-top: 1em;
+}
+mat-radio-button {
   margin-right: 3vw;
 }
 
