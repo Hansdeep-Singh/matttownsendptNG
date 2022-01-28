@@ -18,6 +18,7 @@ export const loginAnimation = {
         top: '40px',
         right: '22px',
         opacity: 0,
+        display:'none'
       })
     ),
     state(

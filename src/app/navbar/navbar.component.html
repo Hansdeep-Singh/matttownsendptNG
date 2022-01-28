@@ -1,8 +1,10 @@
 <!--Navbar-->
 <section id="navbar">
+
   <div [@animateTrigger]="flagShowHide?'show':'hide'">
     <matt-login (close)="closeLogin($event)"></matt-login>
   </div>
+
   <mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark grad-1 fixed-top">
 
     <!-- Navbar brand -->
@@ -65,14 +67,16 @@
         <span class="material-icons material-icons-animation-1 notification-label">
           notifications
         </span>
-        <button (click)="toggleLogin()">
+        <button *ngIf="!isLoggedIn" (click)="toggleLogin()">
           <span class="material-icons material-icons-animation-1 login-label">
             login
           </span>
         </button>
-        <span class="material-icons material-icons-animation-1 logout-label">
-          logout
-        </span>
+        <button *ngIf="isLoggedIn" (click)="logout()">
+          <span class="material-icons material-icons-animation-1 logout-label">
+            logout
+          </span>
+        </button>
       </div>
 
     </links>

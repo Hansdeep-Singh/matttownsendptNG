@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { labelAnimation } from '../animations/animate';
 import { ApiserviceService } from '../services/apiservice.service';
 
@@ -9,35 +10,39 @@ import { ApiserviceService } from '../services/apiservice.service';
   animations: [labelAnimation.labelTrigger],
 })
 export class LoginComponent implements OnInit {
-@Output() close: EventEmitter<boolean> = new EventEmitter();
-  animateUserName:boolean = false;
-  animatePassword:boolean = false;
-  constructor(private apiservice: ApiserviceService) {}
+  @Output() close: EventEmitter<boolean> = new EventEmitter();
+  animateEmailAddress: boolean = false;
+  animatePassword: boolean = false;
+  constructor(private _router:Router,private apiservice: ApiserviceService) {}
   ngOnInit(): void {}
   loginForm = new FormGroup({
-    userName: new FormControl('', Validators.required),
+    emailAddress: new FormControl('', Validators.required),
     password: new FormControl('', Validators.required),
     rememberMe: new FormControl(''),
   });
 
-  closeLogin(){
+  closeLogin() {
     this.close.emit(false);
   }
 
-  animateUserNameFn(){
-    this.animateUserName = true;
+  animateEmailAddressFn() {
+    this.animateEmailAddress = true;
   }
 
-  animatePasswordFn(){
+  animatePasswordFn() {
     this.animatePassword = true;
   }
 
   submit() {
-    console.log(this.loginForm.value);
-    // this.apiservice
-    //   .post(this.loginForm.value, 'Home', 'Login')
-    //   .subscribe((data) => {
-    //     alert(data);
-    //   });
+    this.apiservice
+      .post(this.loginForm.value, 'User', 'Login')
+      .subscribe((data) => {
+        if(data.success){
+          this.close.emit(false);
+          this._router.navigate(["./member"]);
+        }
+        const obj = JSON.parse(data.message);
+        localStorage.setItem("token", obj.AccessToken);
+      });
   }
 }

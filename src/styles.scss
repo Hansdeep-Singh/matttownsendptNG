@@ -145,7 +145,7 @@ input[type="reset"] {
 button:disabled,
 button[disabled] {
   background-color: $clr-secondary-200;
-opacity:0.4;
+  opacity: 0.4;
   color: #d8d8d8;
 }
 
@@ -182,6 +182,10 @@ form input[type="text"] {
   width: 100%;
 }
 
+form .mat-slide-toggle.mat-checked .mat-slide-toggle-thumb {
+  background-color: $clr-bg-orchid;
+}
+
 
 // form input:-webkit-autofill {
 //   border: 3px solid blue;
@@ -191,10 +195,6 @@ form input[type="text"] {
 //   border: 3px solid blue;
 //   background-color: blue;
 // }
-
-form input:-webkit-autofill:focus {
-  background-color: yellow;
-}
 
 // Material Icons Start
 .material-icons-animation-1 {
@@ -297,19 +297,19 @@ form input:-webkit-autofill:focus {
 
 .space-1 {
   width: 100%;
-  height: 10vh;
+  height: 4vw;
 }
 .space-2 {
   width: 100%;
-  height: 20vh;
+  height: 7vw;
 }
 .space-3 {
   width: 100%;
-  height: 30vh;
+  height: 10vw;
 }
 .space-4 {
   width: 100%;
-  height: 40vh;
+  height: 13vw;
 }
 
 .shade-1 {
@@ -603,7 +603,7 @@ form input:-webkit-autofill:focus {
     top: 99px;
     margin-left: auto;
     margin-right: auto;
-    height: 218px;
+    height: 248px;
     position: fixed;
     isolation: isolate;
     padding: 0.3em;
@@ -669,6 +669,7 @@ form input:-webkit-autofill:focus {
   .day {
     background-color: $clr-primary-100;
   }
+  
 }
 
 mat-checkbox {

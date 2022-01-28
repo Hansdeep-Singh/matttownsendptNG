@@ -1,8 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './auth/auth.guard';
 import { CalendarComponent } from './calendar/calendar.component';
 import { HomeComponent } from './home/home.component';
+import { MemberComponent } from './member/member.component';
 import { PreconsultformComponent } from './preconsultform/preconsultform.component';
+import { RegisterComponent } from './register/register.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
@@ -13,6 +16,15 @@ const routes: Routes = [
   {
     path: 'form',
     component: PreconsultformComponent,
+  },
+  {
+    path: 'register',
+    component: RegisterComponent,
+  },
+  {
+    path: 'member',
+    component: MemberComponent,
+    canActivate: [AuthGuard],
   },
 ];
 

@@ -37,6 +37,10 @@ import { LoginComponent } from './login/login.component';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { PreconsultformComponent } from './preconsultform/preconsultform.component';
+import { RegisterComponent } from './register/register.component';
+import { AuthGuard } from './auth/auth.guard';
+import { AuthInterceptor } from './auth/auth.interceptor';
+import { MemberComponent } from './member/member.component';
 
 
 
@@ -49,6 +53,8 @@ import { PreconsultformComponent } from './preconsultform/preconsultform.compone
     CalendarComponent,
     LoginComponent,
     PreconsultformComponent,
+    RegisterComponent,
+    MemberComponent,
   ],
   imports: [
     BrowserModule,
@@ -82,7 +88,14 @@ import { PreconsultformComponent } from './preconsultform/preconsultform.compone
     MDBBootstrapModule.forRoot(),
     AnimateOnScrollModule.forRoot(),
   ],
-  providers: [],
+  providers: [
+    AuthGuard,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

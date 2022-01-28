@@ -100,8 +100,6 @@ export class PreconsultformComponent implements OnInit {
     this.apiService.post(post, 'Home', 'PreConsultForm').subscribe((data) => {
       console.log(data);
     });
-    //alert(JSON.stringify(post));
-    //console.log(JSON.stringify(post));
   }
 
   animateName: boolean | undefined;
