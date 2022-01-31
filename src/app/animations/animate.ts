@@ -15,8 +15,6 @@ export const loginAnimation = {
     state(
       'hide',
       style({
-        top: '40px',
-        right: '22px',
         opacity: 0,
         display:'none'
       })
@@ -27,8 +25,8 @@ export const loginAnimation = {
         opacity: 1,
       })
     ),
-    transition('hide => show', [animate('1s')]),
-    transition('show => hide', [animate('0.5s')]),
+    transition('hide => show', [animate('0.1s')]),
+    transition('show => hide', [animate('0.8s')]),
   ]),
 };
 
@@ -57,8 +55,6 @@ export const notifyAnimation = {
     state(
       'hide',
       style({
-        top: '40px',
-        right: '22px',
         opacity: 0,
         display:'none'
       })

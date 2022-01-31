@@ -1,3 +1,10 @@
-<div class="text-center">
-<p class="text-info">{{message}}</p>
-</div>
+<section id="notify">
+    <div class="notify-box">
+        <a class="d-flex" (click)="closeLogin()">
+            <span class="material-icons">
+                close
+            </span>
+        </a>
+        <div>{{message}}</div>
+    </div>
+</section>

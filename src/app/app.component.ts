@@ -18,4 +18,8 @@ export class AppComponent implements OnInit  {
       }
     });}
   flagShowHide: boolean = false;
+  closeNotification($event:boolean):void{
+    this.flagShowHide = $event;
+  }
 }
+ 

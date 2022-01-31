@@ -5,7 +5,7 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root',
 })
 export class EngineService {
-  private notifyMessageSource = new BehaviorSubject<any>(null);
+  private notifyMessageSource = new BehaviorSubject<any>('fffffffffffffffffffffffffffff');
   currentNotifyMessage = this.notifyMessageSource.asObservable();
   constructor() {}
   changeNotifyMessage(notify: any) {

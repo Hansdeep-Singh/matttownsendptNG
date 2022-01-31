@@ -116,6 +116,8 @@ body {
   );
 }
 
+a{cursor: pointer;}
+
 h1 {
   color: $clr-text-primary;
 }
@@ -596,11 +598,14 @@ form .mat-slide-toggle.mat-checked .mat-slide-toggle-thumb {
     bottom: auto;
     position: absolute;
   }
+
+
+
   .form-box {
     width: 241px;
     left: 0;
     right: 0;
-    top: 99px;
+    top: 20vh;
     margin-left: auto;
     margin-right: auto;
     height: 248px;
@@ -670,6 +675,32 @@ form .mat-slide-toggle.mat-checked .mat-slide-toggle-thumb {
     background-color: $clr-primary-100;
   }
   
+}
+
+#notify{
+  .notify-box{
+    width: 80vw;
+    left: 0;
+    right: 0;
+    top: 4.9em;
+    margin-left: auto;
+    margin-right: auto;
+    position: fixed;
+    isolation: isolate;
+    padding: 0.3em;
+    border-radius: 0.5em;
+    border: 0.2em solid #8e8e8e;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 10000;
+    opacity: 0.9;
+    background: red;
+  }
+  .notify-box a{
+    background-color: burlywood;
+  }
 }
 
 mat-checkbox {

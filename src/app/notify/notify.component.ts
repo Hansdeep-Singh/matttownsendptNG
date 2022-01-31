@@ -17,4 +17,7 @@ export class NotifyComponent implements OnInit {
       }
     });
   }
+  closeLogin(){
+    this.close.emit(false);
+  }
 }
