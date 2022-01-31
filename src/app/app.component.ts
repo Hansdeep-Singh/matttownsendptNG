@@ -1,10 +1,21 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { notifyAnimation } from './animations/animate';
+import { EngineService } from './engine/engine.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  animations: [notifyAnimation.notifyTrigger],
+  styleUrls: ['./app.component.scss'],
 })
-export class AppComponent {
+export class AppComponent implements OnInit  {
   title = 'matttownsendNG';
+  constructor(private engineService: EngineService) {}
+  ngOnInit(): void {
+    this.engineService.currentNotifyMessage.subscribe((message) => {
+      if (message.success == true) {
+        this.flagShowHide = message.success;
+      }
+    });}
+  flagShowHide: boolean = false;
 }

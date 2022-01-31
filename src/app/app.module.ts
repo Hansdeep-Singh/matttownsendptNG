@@ -41,6 +41,7 @@ import { RegisterComponent } from './register/register.component';
 import { AuthGuard } from './auth/auth.guard';
 import { AuthInterceptor } from './auth/auth.interceptor';
 import { MemberComponent } from './member/member.component';
+import { NotifyComponent } from './notify/notify.component';
 
 
 
@@ -55,6 +56,7 @@ import { MemberComponent } from './member/member.component';
     PreconsultformComponent,
     RegisterComponent,
     MemberComponent,
+    NotifyComponent,
   ],
   imports: [
     BrowserModule,
