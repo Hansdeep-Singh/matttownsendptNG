@@ -15,14 +15,13 @@ export class NotifyComponent implements OnInit {
   counter: number = 6;
   ngOnInit(): void {
     this.engineService.currentNotifyMessage.subscribe((message) => {
-      if (message.success == true) {
+      if (message.success == false) {
         this.message = message.notifymessage;
         this.subscription = interval(1000).subscribe(() => {
           this.counter--;
           if (this.counter === 0) {
             this.close.emit(false);
             if (this.subscription) this.subscription?.unsubscribe();
-           
           }
         });
       }
@@ -34,7 +33,7 @@ export class NotifyComponent implements OnInit {
     if (this.subscription) this.subscription?.unsubscribe();
   }
 
-  closeLogin() {
+  closeNotify() {
     this.close.emit(false);
   }
 }

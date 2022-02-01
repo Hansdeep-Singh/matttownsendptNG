@@ -19,8 +19,5 @@ export class AuthService implements OnInit {
   logout(): Observable<any> {
     localStorage.clear();
     return of(void 0);
-    // this.apiService.post(null, 'User', 'Logout').subscribe((data) => {
-    //   alert(data);
-    // });
   }
 }

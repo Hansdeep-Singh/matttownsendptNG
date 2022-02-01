@@ -54,7 +54,7 @@ export class LoginComponent implements OnInit {
           this.close.emit(false);
           this._router.navigate(['./member']);
         } else {
-          this.message = {success : true, notifymessage : data.message};
+          this.message = {success : false, notifymessage : data.message};
           this.engineService.changeNotifyMessage(this.message);
         }
       });
