@@ -116,7 +116,9 @@ body {
   );
 }
 
-a{cursor: pointer;}
+a {
+  cursor: pointer;
+}
 
 h1 {
   color: $clr-text-primary;
@@ -187,7 +189,6 @@ form input[type="text"] {
 form .mat-slide-toggle.mat-checked .mat-slide-toggle-thumb {
   background-color: $clr-bg-orchid;
 }
-
 
 // form input:-webkit-autofill {
 //   border: 3px solid blue;
@@ -599,8 +600,6 @@ form .mat-slide-toggle.mat-checked .mat-slide-toggle-thumb {
     position: absolute;
   }
 
-
-
   .form-box {
     width: 241px;
     left: 0;
@@ -674,11 +673,10 @@ form .mat-slide-toggle.mat-checked .mat-slide-toggle-thumb {
   .day {
     background-color: $clr-primary-100;
   }
-  
 }
 
-#notify{
-  .notify-box{
+#notify {
+  .notify-box {
     width: 80vw;
     left: 0;
     right: 0;
@@ -691,15 +689,20 @@ form .mat-slide-toggle.mat-checked .mat-slide-toggle-thumb {
     border-radius: 0.5em;
     border: 0.2em solid #8e8e8e;
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: row;
     align-items: center;
     justify-content: space-between;
     z-index: 10000;
     opacity: 0.9;
     background: red;
   }
-  .notify-box a{
+  .notify-box a {
     background-color: burlywood;
+  }
+
+  .counter {
+    display: flex;
+    align-items: center;
   }
 }
 
@@ -719,4 +722,28 @@ mat-form-field {
 
 mat-slider {
   width: 100%;
+}
+.spinner {
+  width: 100px;
+  height: 100px;
+  position: fixed;
+  border-radius: 50%;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  z-index: 100000;
+}
+
+.spinner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: hsl(0 0% 0% / 0.1);
+  z-index: -1;
+}
+
+@supports (backdrop-filter: blur(0.1em)) {
+  .spinner::before {
+    backdrop-filter: blur(0.3em);
+  }
 }

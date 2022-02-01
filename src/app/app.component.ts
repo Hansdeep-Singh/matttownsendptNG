@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { notifyAnimation } from './animations/animate';
 import { EngineService } from './engine/engine.service';
+import { LoadingService } from './services/loading.service';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +11,7 @@ import { EngineService } from './engine/engine.service';
 })
 export class AppComponent implements OnInit  {
   title = 'matttownsendNG';
-  constructor(private engineService: EngineService) {}
+  constructor(private engineService: EngineService, public loadingService : LoadingService) {}
   ngOnInit(): void {
     this.engineService.currentNotifyMessage.subscribe((message) => {
       if (message.success == true) {
