@@ -45,6 +45,8 @@ import { NotifyComponent } from './notify/notify.component';
 import { VideosComponent } from './videos/videos.component';
 import { SanitizePipe } from './pipes/SanitizePipe';
 import { VideospageComponent } from './videospage/videospage.component';
+import { PodcastsPageComponent } from './podcastspage/podcastspage.component';
+import { PodcastsComponent } from './podcasts/podcasts.component';
 
 
 
@@ -62,7 +64,9 @@ import { VideospageComponent } from './videospage/videospage.component';
     NotifyComponent,
     VideosComponent,
     SanitizePipe,
-    VideospageComponent
+    VideospageComponent,
+    PodcastsPageComponent,
+    PodcastsComponent
   ],
   imports: [
     BrowserModule,

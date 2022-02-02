@@ -4,6 +4,7 @@ import { AuthGuard } from './auth/auth.guard';
 import { CalendarComponent } from './calendar/calendar.component';
 import { HomeComponent } from './home/home.component';
 import { MemberComponent } from './member/member.component';
+import { PodcastsPageComponent } from './podcastspage/podcastspage.component';
 import { PreconsultformComponent } from './preconsultform/preconsultform.component';
 import { RegisterComponent } from './register/register.component';
 import { VideospageComponent } from './videospage/videospage.component';
@@ -25,6 +26,10 @@ const routes: Routes = [
   {
     path: 'videos',
     component: VideospageComponent,
+  },
+  {
+    path: 'podcasts',
+    component: PodcastsPageComponent,
   },
   {
     path: 'member',
