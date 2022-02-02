@@ -1,0 +1,31 @@
+<section id="videos">
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col text-center">
+                <h1>Videos</h1>
+                <p>Our latest videos provide an insight to various excercise techniques</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col videobox">
+                <div *ngFor="let items of videosUrl">
+                    <div class="item">
+                    <iframe [src]="items.url | safe:'resourceUrl'" title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    
+                    </iframe>
+                    <p>
+                        {{items.desc}}
+                    </p>
+                </div>
+                </div>
+            </div>
+        </div>
+      
+    </div>
+
+  
+</section> 

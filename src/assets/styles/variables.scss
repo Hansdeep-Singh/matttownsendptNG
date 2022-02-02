@@ -24,7 +24,8 @@ $clr-secondary-100: #f9470b;
 $clr-secondary-200: hsl(15, 95%, 61%);
 $clr-text-secondary: #b2b2b2;
 $clr-text-skyblue: #89d2fd;
-$clr-text-primary: #fff;
+$clr-text-primary: hsl(0, 0%, 100%);
+$clr-text-secondary: hsl(0, 0%, 50%);
 $clr-bg-tan: #ffcf95;
 $clr-bg-plum: #d9337d;
 $clr-bg-orchid: #b14ec2;
@@ -43,6 +44,7 @@ $fancy-border-3: 0% 100% 0% 100% / 83% 17% 83% 17%;
 $fancy-border-4: 25% / 50% 25%;
 $fancy-border-5: 10%;
 $fancy-border-6: 90% / 50% 15%;
+$fancy-border-7:25% 75% 75% 25% / 50% 50% 50% 50%;
 
 $custom-primary-material: (
   50: #fbfbfb,

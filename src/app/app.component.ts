@@ -14,7 +14,7 @@ export class AppComponent implements OnInit  {
   constructor(private engineService: EngineService, public loadingService : LoadingService) {}
   ngOnInit(): void {
     this.engineService.currentNotifyMessage.subscribe((message) => {
-      if (message.success == false) {
+      if (message && !message?.success) {
         this.flagShowHide = !message.success;
       }
     });}

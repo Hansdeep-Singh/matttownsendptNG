@@ -42,6 +42,9 @@ import { AuthGuard } from './auth/auth.guard';
 import { AuthInterceptor } from './auth/auth.interceptor';
 import { MemberComponent } from './member/member.component';
 import { NotifyComponent } from './notify/notify.component';
+import { VideosComponent } from './videos/videos.component';
+import { SanitizePipe } from './pipes/SanitizePipe';
+import { VideospageComponent } from './videospage/videospage.component';
 
 
 
@@ -57,6 +60,9 @@ import { NotifyComponent } from './notify/notify.component';
     RegisterComponent,
     MemberComponent,
     NotifyComponent,
+    VideosComponent,
+    SanitizePipe,
+    VideospageComponent
   ],
   imports: [
     BrowserModule,

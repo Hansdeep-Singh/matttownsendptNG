@@ -24,8 +24,12 @@
         <li class="nav-item">
           <a class="nav-link waves-light" [routerLink]="['/home']">About<span class="sr-only">(current)</span></a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link waves-light" [routerLink]="['/about']">Library</a>
+        <li class="nav-item dropdown" dropdown>
+          <a dropdownToggle type="button" class="nav-link dropdown-toggle waves-light">
+            Library</a>
+          <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
+            <a class="dropdown-item waves-light" [routerLink]="['/videos']">Videos</a>
+          </div>
         </li>
         <li class="nav-item dropdown" dropdown>
           <a dropdownToggle type="button" class="nav-link dropdown-toggle waves-light">

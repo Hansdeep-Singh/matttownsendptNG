@@ -21,7 +21,6 @@ export class NavbarComponent implements OnInit {
   flagShowHide: boolean = false;
   message: NotifyConfig | undefined;
   ngOnInit(): void {
-    console.log(this.isLoggedIn);
   }
   toggleLogin() {
     this.flagShowHide = !this.flagShowHide;

@@ -6,6 +6,7 @@ import { HomeComponent } from './home/home.component';
 import { MemberComponent } from './member/member.component';
 import { PreconsultformComponent } from './preconsultform/preconsultform.component';
 import { RegisterComponent } from './register/register.component';
+import { VideospageComponent } from './videospage/videospage.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
@@ -20,6 +21,10 @@ const routes: Routes = [
   {
     path: 'register',
     component: RegisterComponent,
+  },
+  {
+    path: 'videos',
+    component: VideospageComponent,
   },
   {
     path: 'member',
