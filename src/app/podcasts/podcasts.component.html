@@ -1,15 +1,24 @@
-<section id="videos">
+
+<section id="podcasts">
 
     <div class="container-fluid">
         <div class="row">
             <div class="col text-center">
                 <h1>Podcasts</h1>
-                <p>Listen to our expert talks</p>
+                <p>Our latest podcasts provide an insight to various excercise techniques</p>
             </div>
         </div>
         <div class="row">
-            <div class="col">
-                <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FOsloHealthandFitnessFTG%2Fvideos%2F322500316092170%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+            <div class="col podcastbox">
+                <div *ngFor="let items of podcasts">
+                    <div class="item">
+                        <iframe [src]="items.url | safe:'resourceUrl'" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+                    <p>
+                        In today's podcast we help inspire and motivate you to find your fittest and healthiest self
+                        {{items.desc}}
+                    </p>
+                </div>
+                </div>
             </div>
         </div>
       

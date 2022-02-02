@@ -18,12 +18,8 @@
 
     <!-- Collapsible content -->
     <links class="d-flex justify-content-between">
-
       <!-- Links -->
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <a class="nav-link waves-light" [routerLink]="['/home']">About<span class="sr-only">(current)</span></a>
-        </li>
         <li class="nav-item dropdown" dropdown>
           <a dropdownToggle type="button" class="nav-link dropdown-toggle waves-light">
             Library</a>
@@ -36,7 +32,9 @@
           <a dropdownToggle type="button" class="nav-link dropdown-toggle waves-light">
             Products</a>
           <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
-            <a class="dropdown-item waves-light" [routerLink]="['/digital']">Product One</a>
+            <a class="dropdown-item waves-light" [routerLink]="['/posture']">Posture</a>
+            <a class="dropdown-item waves-light" [routerLink]="['/movement']">Movement</a>
+            <a class="dropdown-item waves-light" [routerLink]="['/range']">Range</a>
           </div>
         </li>
 
@@ -49,7 +47,7 @@
         </li>
 
         <li class="nav-item">
-          <a class="nav-link waves-light" [routerLink]="['/contact']">Contact</a>
+          <a class="nav-link waves-light" [routerLink]="['/form']">Contact</a>
         </li>
 
 
