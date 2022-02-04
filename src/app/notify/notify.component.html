@@ -1,5 +1,16 @@
 <section id="notify">
-    <div class="notify-box">
+    <div *ngIf="!status" class="notify-box-fail">
+        <div>{{message}}</div>
+        <div class="counter">
+            <div class="mr-4">Closing in ({{counter}})</div>
+            <a class="d-flex" (click)="closeNotify()">
+                <span class="material-icons">
+                    close
+                </span>
+            </a>
+        </div>
+    </div>
+    <div *ngIf="status" class="notify-box-pass">
         <div>{{message}}</div>
         <div class="counter">
             <div class="mr-4">Closing in ({{counter}})</div>

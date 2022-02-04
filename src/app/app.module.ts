@@ -47,6 +47,8 @@ import { SanitizePipe } from './pipes/SanitizePipe';
 import { VideospageComponent } from './videospage/videospage.component';
 import { PodcastsPageComponent } from './podcastspage/podcastspage.component';
 import { PodcastsComponent } from './podcasts/podcasts.component';
+import { ContactformComponent } from './contactform/contactform.component';
+import { ContactComponent } from './contact/contact.component';
 
 
 
@@ -66,7 +68,9 @@ import { PodcastsComponent } from './podcasts/podcasts.component';
     SanitizePipe,
     VideospageComponent,
     PodcastsPageComponent,
-    PodcastsComponent
+    PodcastsComponent,
+    ContactformComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,

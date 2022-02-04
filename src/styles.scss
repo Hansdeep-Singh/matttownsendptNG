@@ -676,7 +676,7 @@ form .mat-slide-toggle.mat-checked .mat-slide-toggle-thumb {
 }
 
 #notify {
-  .notify-box {
+  .notify-box-fail {
     width: 80vw;
     left: 0;
     right: 0;
@@ -695,6 +695,26 @@ form .mat-slide-toggle.mat-checked .mat-slide-toggle-thumb {
     z-index: 10000;
     opacity: 0.9;
     background: red;
+  }
+  .notify-box-pass {
+    width: 80vw;
+    left: 0;
+    right: 0;
+    top: 4.9em;
+    margin-left: auto;
+    margin-right: auto;
+    position: fixed;
+    isolation: isolate;
+    padding: 0.3em;
+    border-radius: 0.5em;
+    border: 0.2em solid #ffffff;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 10000;
+    opacity: 0.9;
+    background: green
   }
   .notify-box a {
     background-color: burlywood;

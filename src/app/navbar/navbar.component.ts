@@ -19,7 +19,7 @@ export class NavbarComponent implements OnInit {
     private engineService: EngineService
   ) {}
   flagShowHide: boolean = false;
-  message: NotifyConfig | undefined;
+  message: any | undefined;
   ngOnInit(): void {
   }
   toggleLogin() {
@@ -42,7 +42,3 @@ export class NavbarComponent implements OnInit {
   }
 }
 
-interface NotifyConfig {
-  success: boolean;
-  notifymessage?: string;
-}

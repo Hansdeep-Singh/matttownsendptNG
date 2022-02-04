@@ -17,6 +17,10 @@ export class AppComponent implements OnInit  {
       if (message && !message?.success) {
         this.flagShowHide = !message.success;
       }
+      else if(message && message?.success)
+      {
+        this.flagShowHide = message.success;
+      }
     });}
   flagShowHide: boolean = false;
   closeNotification($event:boolean):void{

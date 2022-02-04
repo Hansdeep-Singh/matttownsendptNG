@@ -1,0 +1,52 @@
+<section id="preconsultform">
+    <form [formGroup]="contactForm" (ngSubmit)="submit(contactForm.value)">
+        <div class="container mt-3">
+            <div class="row">
+                <div class="col">
+                    <h1 class="text-center"><u>Contact Us</u></h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md">
+                    <h2>General Enquiry</h2>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md">
+                    <mat-form-field>
+                        <input matInput placeholder="Your name*" formControlName="name">
+                        <mat-error *ngIf="!contactForm.controls['name'].valid && contactForm.controls['name'].touched">
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="col-md">
+                    <mat-form-field>
+                        <input matInput placeholder="Your phone number*" formControlName="phone">
+                        <mat-error
+                            *ngIf="!contactForm.controls['phone'].valid && contactForm.controls['phone'].touched">
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md">
+                    <mat-form-field>
+                        <textarea matInput placeholder="Write to us..." formControlName="enquiry"></textarea>
+                        <mat-error
+                            *ngIf="!contactForm.controls['enquiry'].valid && contactForm.controls['enquiry'].touched">
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <div class="row mt-5">
+                <div class="col text-center">
+                    <p class="text-danger" *ngIf="!contactForm.valid">Field marked with (*) are required.</p>
+                    <button [disabled]="!contactForm.valid" type="submit">Submit</button>
+                </div>
+            </div>
+
+        </div>
+    </form>
+</section>

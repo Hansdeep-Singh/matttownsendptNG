@@ -6,6 +6,7 @@ import {
   FormBuilder,
 } from '@angular/forms';
 import { MatSlideToggleChange } from '@angular/material/slide-toggle';
+import { EngineService } from '../engine/engine.service';
 import { ApiserviceService } from '../services/apiservice.service';
 
 @Component({
@@ -14,7 +15,7 @@ import { ApiserviceService } from '../services/apiservice.service';
   styleUrls: ['./preconsultform.component.scss'],
 })
 export class PreconsultformComponent implements OnInit {
-  constructor(private fb: FormBuilder, private apiService: ApiserviceService) {}
+  constructor(private fb: FormBuilder, private apiService: ApiserviceService, private engineService:EngineService) {}
 
   ngOnInit(): void {}
 
@@ -96,9 +97,12 @@ export class PreconsultformComponent implements OnInit {
     this.showExperience = e.checked;
   }
 
+  message:any |undefined;
+
   submit(post: any) {
-    this.apiService.post(post, 'Home', 'PreConsultForm').subscribe((data) => {
-      console.log(data);
+    this.apiService.post(post, 'User', 'PreConsultForm').subscribe((data) => {
+      this.message = { success: false, notifymessage: data.message };
+      this.engineService.changeNotifyMessage(this.message);
     });
   }
 

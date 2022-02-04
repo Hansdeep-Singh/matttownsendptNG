@@ -13,9 +13,22 @@ export class NotifyComponent implements OnInit {
   constructor(private engineService: EngineService) {}
   subscription: Subscription | undefined;
   counter: number = 6;
+  status: boolean |undefined;
   ngOnInit(): void {
     this.engineService.currentNotifyMessage.subscribe((message) => {
       if (message && !message?.success) {
+        this.status=message?.success;
+        this.message = message.notifymessage;
+        this.subscription = interval(1000).subscribe(() => {
+          this.counter--;
+          if (this.counter === 0) {
+            this.close.emit(false);
+            if (this.subscription) this.subscription?.unsubscribe();
+          }
+        });
+      }
+      else if (message && message?.success) {
+        this.status=message?.success;
         this.message = message.notifymessage;
         this.subscription = interval(1000).subscribe(() => {
           this.counter--;
