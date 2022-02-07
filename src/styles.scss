@@ -871,8 +871,8 @@ form .mat-slide-toggle.mat-checked .mat-slide-toggle-thumb {
   }
   * .benifits-box{
     background-color: $clr-bg-item-100;
-    margin:20px;
-    padding:10px;
+    margin: 20px 0px;
+    padding: 9px;
     border: 1px solid $clr-bg-item-200;
     position: relative;
    
@@ -889,8 +889,11 @@ form .mat-slide-toggle.mat-checked .mat-slide-toggle-thumb {
   color:$clr-tertiary-100;
 }
 .plan{
-  background-color: #004d7a;
-  padding: 8px 18px;
+  border: 1px solid $clr-primary-200;
+  background-color: $clr-primary-100;
+    padding: 17px 23px;
+    border-radius: 14px;
+    margin: 8px 4px;
   p{
     color: #fff;
   }

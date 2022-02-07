@@ -32,7 +32,7 @@
             <div class="row">
                 <div class="col-md">
                     <mat-form-field>
-                        <textarea matInput placeholder="Write to us..." formControlName="enquiry"></textarea>
+                        <textarea matInput placeholder="Write to us...*" formControlName="enquiry"></textarea>
                         <mat-error
                             *ngIf="!contactForm.controls['enquiry'].valid && contactForm.controls['enquiry'].touched">
                         </mat-error>
