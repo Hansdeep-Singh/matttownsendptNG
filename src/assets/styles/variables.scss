@@ -20,8 +20,11 @@ $font-size-small: 0.7em;
 //Theme Dark
 $clr-bg-body: #666666;
 $clr-primary-100: #61597c;
-$clr-secondary-100: #f9470b;
+$clr-secondary-100: hsl(15, 95%, 51%);
 $clr-secondary-200: hsl(15, 95%, 61%);
+$clr-secondary-300: hsl(15, 95%, 71%);
+$clr-secondary-400: hsl(15, 95%, 81%);
+$clr-tertiary-100:hsl(100, 92%, 48%);
 $clr-text-secondary: #b2b2b2;
 $clr-text-skyblue: #89d2fd;
 $clr-text-primary: hsl(0, 0%, 100%);
@@ -30,6 +33,8 @@ $clr-bg-tan: #ffcf95;
 $clr-bg-plum: #d9337d;
 $clr-bg-orchid: #b14ec2;
 $clr-bg-skyblue: #89d2fd;
+$clr-bg-item-100:hsl(105, 7%, 11%);
+$clr-bg-item-200:hsl(105, 7%, 31%);
 $transition-time: 0.5s;
 
 //Colour error

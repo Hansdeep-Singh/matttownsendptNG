@@ -49,6 +49,7 @@ import { PodcastsPageComponent } from './podcastspage/podcastspage.component';
 import { PodcastsComponent } from './podcasts/podcasts.component';
 import { ContactformComponent } from './contactform/contactform.component';
 import { ContactComponent } from './contact/contact.component';
+import { MembershipComponent } from './membership/membership.component';
 
 
 
@@ -70,7 +71,8 @@ import { ContactComponent } from './contact/contact.component';
     PodcastsPageComponent,
     PodcastsComponent,
     ContactformComponent,
-    ContactComponent
+    ContactComponent,
+    MembershipComponent
   ],
   imports: [
     BrowserModule,

@@ -5,6 +5,7 @@ import { CalendarComponent } from './calendar/calendar.component';
 import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
 import { MemberComponent } from './member/member.component';
+import { MembershipComponent } from './membership/membership.component';
 import { PodcastsPageComponent } from './podcastspage/podcastspage.component';
 import { PreconsultformComponent } from './preconsultform/preconsultform.component';
 import { RegisterComponent } from './register/register.component';
@@ -19,6 +20,10 @@ const routes: Routes = [
   {
     path: 'form',
     component: PreconsultformComponent,
+  },
+  {
+    path: 'membership',
+    component: MembershipComponent,
   },
   {
     path: 'register',

@@ -75,7 +75,7 @@ body {
     #401f46,
     #272727
   );
-  padding-top: 75px;
+  margin-top: 60px;
   font-family: $font-poppins;
   color: $clr-white-100;
 }
@@ -190,6 +190,42 @@ form .mat-slide-toggle.mat-checked .mat-slide-toggle-thumb {
   background-color: $clr-bg-orchid;
 }
 
+.legible {
+
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+.legible:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(1deg, rgb(98 98 98 / 90%), rgba(0, 0, 0, 0.2));
+}
+
+
+.legible-dark {
+
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+.legible-dark:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  opacity: 0.6;
+  background: #000000;
+}
+
+.quote::before{
+  content:open-quote;
+}
+.quote::after{
+  content:close-quote;
+}
 // form input:-webkit-autofill {
 //   border: 3px solid blue;
 //   background-color: blue;
@@ -328,84 +364,73 @@ form .mat-slide-toggle.mat-checked .mat-slide-toggle-thumb {
   opacity: 0.3;
   content: "";
 }
-#navbar {
-  .bookmebtn {
-    position: relative;
-    background: black;
-    color: white;
-    border: none;
-    padding: 5px;
-    font: inherit;
-    cursor: pointer;
-    outline: inherit;
-    border-radius: 25px;
-  }
-  .bookmebtn::before {
-    position: absolute;
-    top: 0;
-    left: 0;
-    margin: -5px 5px 5px -5px;
-    border: none;
-    content: "";
-    width: 105%;
-    height: 100%;
-    z-index: -1;
-    background: conic-gradient(red, yellow, lime, aqua, blue, magenta, red);
-    padding: 41px 51px 5px 5px;
-    border-radius: 25px;
-    transition: 1.5s;
-    opacity: 1;
-  }
 
+//Common Start
+
+.colorfullbtn {
+  position: relative;
+  background: black;
+  color: white;
+  border: none;
+  padding: 5px;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  border-radius: 25px;
+}
+.colorfullbtn::before {
+  position: absolute;
+  inset: 0;
+  margin: -5px;
+  border: none;
+  content: "";
+  z-index: -1;
+  background: conic-gradient(red, yellow, lime, aqua, blue, magenta, red);
+  border-radius: 25px;
+  transition: 1.5s;
+  opacity: 1;
+}
+
+.colorfullbtn:hover::before {
+  position: absolute;
+  inset: 0;
+  margin: -5px;
+  border: none;
+  content: "";
+  z-index: -1;
+  background: conic-gradient(red, yellow, lime, aqua, blue, magenta, red);
+  border-radius: 25px;
+  opacity: 0;
+}
+
+.colorfullbtn::after {
+  position: absolute;
+  transition: 1.5s;
+  inset: 0;
+  margin: -5px;
+  border: none;
+  content: "";
+  z-index: -1;
+  background: conic-gradient(blue, magenta, aqua, red, yellow, lime, blue);
+  border-radius: 25px;
+  opacity: 0;
+}
+.colorfullbtn:hover::after {
+  position: absolute;
+  inset: 0;
+  margin: -5px;
+  border: none;
+  content: "";
+  z-index: -1;
+  background: conic-gradient(blue, magenta, aqua, red, yellow, lime, blue);
+  border-radius: 25px;
+  opacity: 1;
+}
+//Common End
+
+#navbar {
   .material-icons-animation-1 {
     margin-left: 20px;
-  }
-  .bookmebtn:hover::before {
-    position: absolute;
-    top: 0;
-    left: 0;
-    margin: -5px 5px 5px -5px;
-    border: none;
-    content: "";
-    width: 105%;
-    height: 100%;
-    z-index: -1;
-    background: conic-gradient(red, yellow, lime, aqua, blue, magenta, red);
-    padding: 41px 51px 5px 5px;
-    border-radius: 25px;
-    opacity: 0;
-  }
-
-  .bookmebtn::after {
-    position: absolute;
-    transition: 1.5s;
-    top: 0;
-    left: 0;
-    margin: -5px 5px 5px -5px;
-    border: none;
-    content: "";
-    width: 105%;
-    height: 100%;
-    z-index: -1;
-    background: conic-gradient(blue, magenta, aqua, red, yellow, lime, blue);
-    padding: 41px 51px 5px 5px;
-    border-radius: 25px;
-    opacity: 0;
-  }
-  .bookmebtn:hover::after {
-    position: absolute;
-    top: 0;
-    left: 0;
-    margin: -5px 5px 5px -5px;
-    border: none;
-    content: "";
-    width: 105%;
-    height: 100%;
-    z-index: -1;
-    background: conic-gradient(blue, magenta, aqua, red, yellow, lime, blue);
-    padding: 41px 51px 5px 5px;
-    border-radius: 25px;
-    opacity: 1;
   }
 }
 #header {
@@ -413,6 +438,10 @@ form .mat-slide-toggle.mat-checked .mat-slide-toggle-thumb {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+  }
+
+  .member {
+    text-align: center;
   }
   .crousal {
     display: flex;
@@ -714,7 +743,7 @@ form .mat-slide-toggle.mat-checked .mat-slide-toggle-thumb {
     justify-content: space-between;
     z-index: 10000;
     opacity: 0.9;
-    background: green
+    background: green;
   }
   .notify-box a {
     background-color: burlywood;
@@ -726,10 +755,10 @@ form .mat-slide-toggle.mat-checked .mat-slide-toggle-thumb {
   }
 }
 
-#alinks {
+.alinks {
+
   a {
     background-color: #f9470b;
-    margin: 40px;
     color: #fff;
     padding: 10px 30px;
     border-radius: $fancy-border-2;
@@ -753,7 +782,7 @@ form .mat-slide-toggle.mat-checked .mat-slide-toggle-thumb {
   }
 
   .item {
-    background-color: #1a1d19;
+    background-color: $clr-bg-item-100;
     height: 400px;
     padding: 14px;
     flex-direction: column;
@@ -761,11 +790,11 @@ form .mat-slide-toggle.mat-checked .mat-slide-toggle-thumb {
     flex-wrap: wrap;
     align-content: flex-start;
     justify-content: space-evenly;
-    border: 1px solid #524e4e;
+    border: 1px solid $clr-bg-item-200;
     width: 450px;
-   
 
-    iframe {  width: 100%;
+    iframe {
+      width: 100%;
       aspect-ratio: calc(1266 / 712);
     }
     p {
@@ -802,9 +831,9 @@ form .mat-slide-toggle.mat-checked .mat-slide-toggle-thumb {
     justify-content: space-evenly;
     border: 1px solid #524e4e;
     width: 450px;
-   
 
-    iframe {  width: 100%;
+    iframe {
+      width: 100%;
       aspect-ratio: calc(1266 / 712);
     }
     p {
@@ -826,6 +855,57 @@ form .mat-slide-toggle.mat-checked .mat-slide-toggle-thumb {
     width: 100%;
     padding: 0;
   }
+}
+
+#membership {
+  .parallel {
+    background-image: url(./assets/images/matt-2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    max-width: 100%;
+  }
+  .parallel-testimonial {
+    background-image: url(./assets/images/belly-measure.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    max-width: 100%;
+  }
+  * .col-md{
+    background-color: $clr-bg-item-100;
+    margin:20px;
+    padding:10px;
+    border: 1px solid $clr-bg-item-200;
+    position: relative;
+   
+  }
+.col-md span{
+  background-color: $clr-bg-item-100;
+  border-top: 2px solid $clr-bg-item-200;
+  padding: 11.5px;
+  border-radius: 50%;
+  position: absolute;
+  top: -0.9em;
+  right: -0.03em;
+  font-size: 39.5px;
+  color:$clr-tertiary-100;
+}
+.plan{
+  background-color: #004d7a;
+  padding: 8px 18px;
+  p{
+    color: #fff;
+  }
+}
+h1{text-align: center;}
+h3{
+  position:relative;
+  margin-top:5px;
+}
+  h2{
+    color: $clr-tertiary-100;
+    font-weight:900;
+  }
+ 
 }
 
 mat-checkbox {
