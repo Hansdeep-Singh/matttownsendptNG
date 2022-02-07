@@ -8,7 +8,8 @@
             </div>
         </div>
         <div class="row">
-            <div class="col videobox">
+            <div class="col ">
+                <div class="videobox">
                 <div *ngFor="let items of videosUrl">
                     <div class="item">
                     <iframe [src]="items.url | safe:'resourceUrl'" title="YouTube video player"
@@ -22,6 +23,7 @@
                     </p>
                 </div>
                 </div>
+            </div>
             </div>
         </div>
       

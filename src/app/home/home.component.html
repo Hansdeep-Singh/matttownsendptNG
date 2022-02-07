@@ -12,10 +12,9 @@
 </section>
 <div class="space-1"></div>
 <section id="parallel-1">
-
-    <div class="row">
-        <div class="col">
-            <div parallax [config]="{initialValue: -200, ratio: .3}" class="container shadow  parallel-1">
+    <div parallax [config]="{initialValue: -200, ratio: .3}" class="container shadow  parallel-1">
+        <div class="row">
+            <div class="col">
                 <div class="space-1"></div>
                 <h1 class="shade-1">10+ YEARS OF EXPERIENCE</h1>
                 <div class="space-1"></div>
@@ -24,26 +23,27 @@
     </div>
 </section>
 <div class="space-1"></div>
-<matt-videos [count]=3></matt-videos>
+<matt-videos [count] = 3></matt-videos>
 
-
+<section >
     <div class="container alinks">
-        <div class="row mt-1">
+        <div class="row mt-4">
             <div class="col d-flex justify-content-center">
                 <a [routerLink]="['/videos']">Watch all videos</a>
             </div>
         </div>
     </div>
+</section>
 
 
 
 <div class="space-1"></div>
 
-<matt-podcasts [count]=3></matt-podcasts>
+<matt-podcasts [count] = 3></matt-podcasts>
 
-<section id="alinks">
-    <div class="container">
-        <div class="row mt-1">
+<section>
+    <div class="container alinks">
+        <div class="row mt-4">
             <div class="col d-flex justify-content-center">
                 <a [routerLink]="['/podcasts']">Listen to all podcasts</a>
             </div>

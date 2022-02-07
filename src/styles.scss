@@ -217,7 +217,7 @@ form .mat-slide-toggle.mat-checked .mat-slide-toggle-thumb {
   inset: 0;
   z-index: -1;
   opacity: 0.6;
-  background: #000000;
+  background: linear-gradient(1deg, rgba(51, 36, 36, 0.9), rgba(0, 0, 0, 0.2));
 }
 
 .quote::before{
@@ -756,7 +756,6 @@ form .mat-slide-toggle.mat-checked .mat-slide-toggle-thumb {
 }
 
 .alinks {
-
   a {
     background-color: #f9470b;
     color: #fff;
@@ -870,7 +869,7 @@ form .mat-slide-toggle.mat-checked .mat-slide-toggle-thumb {
     background-size: cover;
     max-width: 100%;
   }
-  * .col-md{
+  * .benifits-box{
     background-color: $clr-bg-item-100;
     margin:20px;
     padding:10px;
