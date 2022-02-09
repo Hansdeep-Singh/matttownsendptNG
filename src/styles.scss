@@ -132,6 +132,11 @@ h2 {
 p {
   color: $clr-text-secondary;
   font-size: $font-size-paragraph;
+  padding:10px;
+  font-size: 0.8em;
+  line-height: 1.2em;
+  font-weight: 900;
+  letter-spacing: 0.03em;
 }
 
 button,
@@ -190,6 +195,15 @@ form .mat-slide-toggle.mat-checked .mat-slide-toggle-thumb {
   background-color: $clr-bg-orchid;
 }
 
+.card {
+  background-color: $clr-bg-item-100;
+  border: 1px solid $clr-bg-item-200;
+  margin: 10px 0px;
+}
+iframe {
+  width: 100%;
+  aspect-ratio: calc(1266 / 712);
+}
 .legible {
 
   position: relative;
@@ -770,84 +784,6 @@ form .mat-slide-toggle.mat-checked .mat-slide-toggle-thumb {
   }
 }
 
-#videos {
-  .videobox {
-    display: flex;
-    flex-direction: row;
-    align-items: start;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 30px;
-  }
-
-  .item {
-    background-color: $clr-bg-item-100;
-    height: 400px;
-    padding: 14px;
-    flex-direction: column;
-    flex: 1;
-    flex-wrap: wrap;
-    align-content: flex-start;
-    justify-content: space-evenly;
-    border: 1px solid $clr-bg-item-200;
-    width: 450px;
-
-    iframe {
-      width: 100%;
-      aspect-ratio: calc(1266 / 712);
-    }
-    p {
-      font-size: 0.8em;
-      line-height: 1.2em;
-      font-weight: 900;
-      letter-spacing: 0.03em;
-    }
-  }
-  @media only screen and (max-width: 480px) {
-    .item {
-      width: 350px;
-    }
-  }
-}
-
-#podcasts {
-  .podcastbox {
-    display: flex;
-    flex-direction: row;
-    align-items: start;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 30px;
-  }
-
-  .item {
-    background-color: #1a1d19;
-    padding: 14px;
-    flex-direction: column;
-    flex: 1;
-    flex-wrap: wrap;
-    align-content: flex-start;
-    justify-content: space-evenly;
-    border: 1px solid #524e4e;
-    width: 450px;
-
-    iframe {
-      width: 100%;
-      aspect-ratio: calc(1266 / 712);
-    }
-    p {
-      font-size: 0.8em;
-      line-height: 1.2em;
-      font-weight: 900;
-      letter-spacing: 0.03em;
-    }
-  }
-  @media only screen and (max-width: 480px) {
-    .item {
-      width: 350px;
-    }
-  }
-}
 
 #videospage {
   img {
