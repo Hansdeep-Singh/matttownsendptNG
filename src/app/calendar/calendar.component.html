@@ -6,7 +6,7 @@
             </div>
         </div>
         <div class="row">
-           
+
             <div class="col text-center">
                 <button (click)="fnPrevious()"> <span class="material-icons material-icons-animation-1 previous-month">
                         undo
@@ -19,7 +19,7 @@
                     </span>
                 </button>
             </div>
-          
+
         </div>
         <div class="row">
             <div class="col text-center">
@@ -42,6 +42,23 @@
                     </tr>
                 </table>
             </div>
+        </div>
+    </div>
+</section>
+<div class="space-1"></div>
+<section id="datepicker">
+    <div class="container">
+        <div class="row">
+            <div class="col-4"></div>
+            <div class="col">
+                <mat-form-field appearance="fill">
+                    <mat-label>Choose a date</mat-label>
+                    <input matInput [matDatepicker]="picker">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+            </div>
+            <div class="col-4"></div>
         </div>
     </div>
 </section>

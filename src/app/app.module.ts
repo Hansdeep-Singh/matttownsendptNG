@@ -26,6 +26,7 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatTableModule} from '@angular/material/table';
+import {MatDatepickerModule} from '@angular/material/datepicker';
 
 import { AnimateOnScrollModule } from 'ng2-animate-on-scroll';
 import { HeaderComponent } from './header/header.component';
@@ -50,6 +51,7 @@ import { PodcastsComponent } from './podcasts/podcasts.component';
 import { ContactformComponent } from './contactform/contactform.component';
 import { ContactComponent } from './contact/contact.component';
 import { MembershipComponent } from './membership/membership.component';
+import { MatNativeDateModule } from '@angular/material/core';
 
 
 
@@ -83,6 +85,8 @@ import { MembershipComponent } from './membership/membership.component';
     MatRadioModule,
     MatSlideToggleModule,
     MatTableModule,
+    MatDatepickerModule,
+    MatNativeDateModule, 
     FormsModule,
     MdbAccordionModule,
     MdbCarouselModule,
@@ -107,6 +111,7 @@ import { MembershipComponent } from './membership/membership.component';
     AnimateOnScrollModule.forRoot(),
   ],
   providers: [
+    MatDatepickerModule,
     AuthGuard,
     {
       provide: HTTP_INTERCEPTORS,
