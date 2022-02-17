@@ -19,7 +19,19 @@ export class ApiserviceService {
     intId?: number,
     stringId?: string
   ): Observable<any> {
-    return this.http.get(this.ROOT_URL + `api/${controller}/${method}/`);
+    return this.http
+      .get(this.ROOT_URL + `api/${controller}/${method}/${intId?intId:stringId?stringId:null}`)
+      .pipe(catchError(this.handleError));
+  }
+
+
+  getVoid(
+    controller: string,
+    method: string,
+  ): Observable<any> {
+    return this.http
+      .get(this.ROOT_URL + `api/${controller}/${method}`)
+      .pipe(catchError(this.handleError));
   }
   post(model: any, controller: string, method: string): Observable<any> {
     const route = `api/${controller}/${method}/`;

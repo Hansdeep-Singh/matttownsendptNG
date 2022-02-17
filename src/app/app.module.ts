@@ -27,6 +27,7 @@ import {MatRadioModule} from '@angular/material/radio';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatTableModule} from '@angular/material/table';
 import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatSelectModule} from '@angular/material/select';
 
 import { AnimateOnScrollModule } from 'ng2-animate-on-scroll';
 import { HeaderComponent } from './header/header.component';
@@ -52,6 +53,8 @@ import { ContactformComponent } from './contactform/contactform.component';
 import { ContactComponent } from './contact/contact.component';
 import { MembershipComponent } from './membership/membership.component';
 import { MatNativeDateModule } from '@angular/material/core';
+import { BookingComponent } from './booking/booking.component';
+import { ConsultComponent } from './consult/consult.component';
 
 
 
@@ -74,7 +77,9 @@ import { MatNativeDateModule } from '@angular/material/core';
     PodcastsComponent,
     ContactformComponent,
     ContactComponent,
-    MembershipComponent
+    MembershipComponent,
+    BookingComponent,
+    ConsultComponent
   ],
   imports: [
     BrowserModule,
@@ -86,6 +91,7 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatSlideToggleModule,
     MatTableModule,
     MatDatepickerModule,
+    MatSelectModule,
     MatNativeDateModule, 
     FormsModule,
     MdbAccordionModule,

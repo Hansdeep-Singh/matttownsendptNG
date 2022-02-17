@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './auth/auth.guard';
 import { CalendarComponent } from './calendar/calendar.component';
+import { ConsultComponent } from './consult/consult.component';
 import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
 import { MemberComponent } from './member/member.component';
@@ -14,8 +15,8 @@ import { VideospageComponent } from './videospage/videospage.component';
 const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
   {
-    path: 'book',
-    component: CalendarComponent,
+    path: 'consult',
+    component: ConsultComponent,
   },
   {
     path: 'form',

@@ -51,6 +51,7 @@ export class LoginComponent implements OnInit {
         if (data.success) {
           const obj = JSON.parse(data.message);
           localStorage.setItem('token', obj.AccessToken);
+          localStorage.setItem('id',obj.UserId);
           this.close.emit(false);
           this._router.navigate(['./member']);
         } else {
