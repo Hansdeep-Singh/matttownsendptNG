@@ -16,11 +16,11 @@ export class CalendarComponent implements OnInit {
   
   monthIncrement:number = 0;
 
-  fnPrevious() {
+  previousMonth() {
     this.monthIncrement--;
   }
 
-  fnNext() {
+  nextMonth() {
     this.monthIncrement++;
   }
 

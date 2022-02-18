@@ -11,8 +11,10 @@
               matInput
               [matDatepicker]="picker"
               (dateInput)="addEvent('input', $event)"
-              (dateChange)="addEvent('change', $event)"
+              
             />
+
+            <!-- (dateChange)="addEvent('change', $event)" -->
             <mat-datepicker-toggle
               matSuffix
               [for]="picker"
@@ -30,7 +32,7 @@
         <div class="col-2">
           <mat-form-field appearance="fill">
             <mat-label>Choose Time</mat-label>
-            <mat-select formControlName="slotId" required>
+            <mat-select formControlName="slotId" required [disabled]="!bookingForm.controls['bookingDate'].valid" >
               <mat-option>--</mat-option>
               <mat-option
                 *ngFor="let timeslot of timeSlots"
@@ -56,10 +58,13 @@
       </div>
       <div class="row mt-5">
         <div class="col text-center">
-
+          <p class="text-danger" *ngIf="!bookingForm.controls['bookingDate'].valid">Select the date and then time.</p>
           <p class="text-danger" *ngIf="!bookingForm.valid">Field marked with (*) are required.</p>
-          <button [disabled]="!bookingForm.valid" type="submit">Submit</button>
+         
           
+          <button
+           [disabled]="!bookingForm.valid" 
+           type="submit">Submit</button>
         </div>
       </div>
     </div>
