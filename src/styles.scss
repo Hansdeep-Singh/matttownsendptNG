@@ -383,7 +383,8 @@ iframe {
 
 .colorfullbtn {
   position: relative;
-  background: black;
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(26,24,65,1) 51%, rgba(2,0,36,1) 100%);
   color: white;
   border: none;
   padding: 5px;
@@ -395,7 +396,7 @@ iframe {
 .colorfullbtn::before {
   position: absolute;
   inset: 0;
-  margin: -5px;
+  margin: -1px;
   border: none;
   content: "";
   z-index: -1;
@@ -408,7 +409,7 @@ iframe {
 .colorfullbtn:hover::before {
   position: absolute;
   inset: 0;
-  margin: -5px;
+  margin: -1px;
   border: none;
   content: "";
   z-index: -1;
@@ -421,7 +422,7 @@ iframe {
   position: absolute;
   transition: 1.5s;
   inset: 0;
-  margin: -5px;
+  margin: -1px;
   border: none;
   content: "";
   z-index: -1;
@@ -432,7 +433,7 @@ iframe {
 .colorfullbtn:hover::after {
   position: absolute;
   inset: 0;
-  margin: -5px;
+  margin: -1px;
   border: none;
   content: "";
   z-index: -1;

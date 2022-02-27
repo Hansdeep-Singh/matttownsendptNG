@@ -35,9 +35,18 @@
                             {{day}}
                         </th>
                     </tr>
-                    <tr *ngFor="let weeks of Calendar">
-                        <td *ngFor="let day of weeks.days">
-                            {{day}}
+                    
+                    <tr *ngFor="let cal of calData">
+                        <td *ngFor="let events of cal.daysEvents">
+                          
+                            <span *ngFor="let dayz of events[0]"> {{dayz}}
+
+
+                                <span *ngFor="let evts of dayz[0]"> {{evts}} <br></span>
+
+                            </span>
+                          
+                          
                         </td>
                     </tr>
                 </table>

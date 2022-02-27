@@ -13,8 +13,6 @@ export class BookingComponent implements OnInit {
   constructor(private fb: FormBuilder, private apiService: ApiserviceService) {}
 
   ngOnInit(): void {
-    //Promise.resolve().then(() => this.getTimeSlots(moment().format('YYYY-MM-DD')));
-    //this.getTimeSlots();
   }
   bookingForm = this.fb.group({
     bookingDate: [null, Validators.required],
@@ -26,28 +24,29 @@ export class BookingComponent implements OnInit {
   bookingPost: bookingPost | undefined;
 
   submit(post: any) {
-    var id1 = localStorage.getItem('id');
+ 
+   let id = localStorage.getItem('id');
     const id2 = 'b60e41ee-5311-409a-9d96-87731e8f3645';
+    //const id2 = 'C51141C9-5D18-4F3B-B22A-21216D76630F';
 
     this.bookingPost = {
-      userId: id2,
+      userId: id,
       bookingDate: moment(post.bookingDate).format('YYYY-MM-DD'),
-      //bookingDate: post.bookingDate,
       slotId: post.slotId,
     };
 
     this.apiService
       .post(this.bookingPost, 'Booking', 'AddBooking')
       .subscribe((data) => {
-        console.log(JSON.stringify(data));
+        Promise.resolve().then(() =>
+          this.getTimeSlots(moment(post.bookingDate).format('YYYY-MM-DD'))
+        );
       });
-    
-      this.timeSlots = [];
   }
 
   addEvent(type: string, event: MatDatepickerInputEvent<Date>) {
     this.getTimeSlots(moment(event.value).format('YYYY-MM-DD'));
-    console.log(`${type}: ${event.value}`);
+    //console.log(`${type}: ${event.value}`);
   }
 
   getTimeSlots(date?: string) {
@@ -62,6 +61,8 @@ export class BookingComponent implements OnInit {
           });
         });
       });
+
+    console.log(this.timeSlots);
   }
 }
 
@@ -71,7 +72,7 @@ interface timeSlot {
 }
 
 interface bookingPost {
-  userId: string;
+  userId: string | null;
   bookingDate: string;
   slotId: number;
 }

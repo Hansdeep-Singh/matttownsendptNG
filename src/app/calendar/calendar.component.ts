@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as moment from 'moment';
+import { ApiserviceService } from '../services/apiservice.service';
 
 @Component({
   selector: 'matt-calendar',
@@ -7,21 +8,50 @@ import * as moment from 'moment';
   styleUrls: ['./calendar.component.scss'],
 })
 export class CalendarComponent implements OnInit {
-  constructor() {}
+  constructor(private apiService: ApiserviceService) {}
 
   ngOnInit(): void {
-    //this.fnCalendar();
+    //  console.log(this.Calendar);
+
+    this.Calendar.forEach((element) => {
+      const dayEvents = [];
+      dayEvents.push(element);
+      dayEvents.forEach((element) => {
+       this.calData?.push(element);
+      });
+    });
+
+    console.log(this.calData);
   }
-  
-  
-  monthIncrement:number = 0;
+
+  calData: any[]=[];
+
+  calis: string[] = [];
+
+  monthIncrement: number = 0;
 
   previousMonth() {
     this.monthIncrement--;
+    this.calData = [];
+    this.Calendar.forEach((element) => {
+      const dayEvents = [];
+      dayEvents.push(element);
+      dayEvents.forEach((element) => {
+       this.calData?.push(element);
+      });
+    });
   }
 
   nextMonth() {
     this.monthIncrement++;
+    this.calData = [];
+    this.Calendar.forEach((element) => {
+      const dayEvents = [];
+      dayEvents.push(element);
+      dayEvents.forEach((element) => {
+       this.calData?.push(element);
+      });
+    });
   }
 
   // get currentMonth():string{
@@ -29,28 +59,53 @@ export class CalendarComponent implements OnInit {
   // }
 
   get currentMonthYear(): monthYearConfig {
-    let month = moment().add(this.monthIncrement,'month').format('MMMM');
-    let year = moment().add(this.monthIncrement,'month').format('YYYY');
+    let month = moment().add(this.monthIncrement, 'month').format('MMMM');
+    let year = moment().add(this.monthIncrement, 'month').format('YYYY');
     let currentMonthYear = { month: month, year: parseInt(year) };
     return currentMonthYear;
   }
   get Calendar(): any[] {
     const calendar = [];
     const today = moment();
-    const startDay = today.clone().startOf('month').add(this.monthIncrement,'month').startOf('week');
-    const endDay = today.clone().endOf('month').add(this.monthIncrement,'month').endOf('week');
-    
+    const startDay = today
+      .clone()
+      .startOf('month')
+      .add(this.monthIncrement, 'month')
+      .startOf('week');
+    const endDay = today
+      .clone()
+      .endOf('month')
+      .add(this.monthIncrement, 'month')
+      .endOf('week');
+
     let date = startDay.clone().subtract(1, 'day');
-    //this.currentMonth= moment(startDay).format("MMMM");
-    while (date.isBefore(endDay, 'day'))
+    // this.currentMonth= moment(startDay).format("MMMM");
+    while (date.isBefore(endDay, 'day')) {
       calendar.push({
-        days: Array(7)
+        daysEvents: Array(7)
           .fill(0)
-          .map(() => moment(date.add(1, 'day').clone()).format('DD')),
+          .map(() => {
+            const calendarData = [];
+            var calendarDate = moment(date.add(1, 'day').clone()).format(
+              'YYYY-MM-DD'
+            );
+            calendarData.push([calendarDate, this.getEvents(calendarDate)]);
+            return calendarData;
+          }),
       });
+    }
     return calendar;
   }
 
+  getEvents(date: string) {
+    let events: string[] = [];
+    this.apiService
+      .get('Booking', 'GetEvents', undefined, date)
+      .subscribe((data) => {
+        Promise.resolve().then(() => events.push(data));
+      });
+    return events;
+  }
 
   days: string[] | undefined = [
     'Sun',
@@ -64,7 +119,17 @@ export class CalendarComponent implements OnInit {
   dates: string[] | undefined;
 }
 
-interface monthYearConfig{
-  month:string;
-  year:number;
+interface monthYearConfig {
+  month: string;
+  year: number;
+}
+
+interface calendar {
+  days: string;
+  events: string[];
+}
+
+interface timeSlot {
+  slotId: number;
+  description: string;
 }
