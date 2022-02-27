@@ -1,56 +1,58 @@
 <section id="calendar">
-    <div class="container-fluid">
-        <div class="row mt-3">
-            <div class="col">
-                <h1>Current Bookings</h1>
-            </div>
-        </div>
-        <div class="row">
-
-            <div class="col text-center">
-                <button (click)="previousMonth()"> <span class="material-icons material-icons-animation-1 previous-month">
-                        undo
-                    </span>
-                </button>
-            </div>
-            <div class="col text-center">
-                <button (click)="nextMonth()"> <span class="material-icons material-icons-animation-1 next-month">
-                        redo
-                    </span>
-                </button>
-            </div>
-
-        </div>
-        <div class="row">
-            <div class="col text-center">
-                {{currentMonthYear.month}}
-                {{currentMonthYear.year}}
-            </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                <table>
-                    <tr>
-                        <th *ngFor="let day of days">
-                            {{day}}
-                        </th>
-                    </tr>
-                    
-                    <tr *ngFor="let cal of calData">
-                        <td *ngFor="let events of cal.daysEvents">
-                          
-                            <span *ngFor="let dayz of events[0]"> {{dayz}}
-
-
-                                <span *ngFor="let evts of dayz[0]"> {{evts}} <br></span>
-
-                            </span>
-                          
-                          
-                        </td>
-                    </tr>
-                </table>
-            </div>
-        </div>
+  <div class="container-fluid">
+    <div class="row mt-3">
+      <div class="col">
+        <h1>Current Bookings</h1>
+      </div>
     </div>
+    <div class="row">
+      <div class="col text-center">
+        <button (click)="previousMonth()">
+          <span
+            class="material-icons material-icons-animation-1 previous-month"
+          >
+            undo
+          </span>
+        </button>
+      </div>
+      <div class="col text-center">
+        <button (click)="nextMonth()">
+          <span class="material-icons material-icons-animation-1 next-month">
+            redo
+          </span>
+        </button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col text-center">
+        {{ currentMonthYear.month }}
+        {{ currentMonthYear.year }}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <table>
+          <tr>
+            <th *ngFor="let day of days">
+              {{ day }}
+            </th>
+          </tr>
+
+          <tr *ngFor="let cal of calData">
+            <td *ngFor="let events of cal.daysEvents">
+              <div class="parent">
+                <div *ngFor="let dayz of events[0]">
+                  {{ dayz }}
+                  <div class="child">
+                    <span *ngFor="let evts of dayz[0]"> {{ evts }}<br /></span>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
 </section>
+<matt-booking (reloadCalender)="recieveReload($event)"></matt-booking>

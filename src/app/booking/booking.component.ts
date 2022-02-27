@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output,EventEmitter } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { MatDatepickerInputEvent } from '@angular/material/datepicker';
 import { ApiserviceService } from '../services/apiservice.service';
@@ -12,8 +12,12 @@ import * as moment from 'moment';
 export class BookingComponent implements OnInit {
   constructor(private fb: FormBuilder, private apiService: ApiserviceService) {}
 
+  @Output() reloadCalender = new EventEmitter<boolean>();
+
   ngOnInit(): void {
   }
+
+
   bookingForm = this.fb.group({
     bookingDate: [null, Validators.required],
     slotId: [undefined, Validators.required],
@@ -42,6 +46,8 @@ export class BookingComponent implements OnInit {
           this.getTimeSlots(moment(post.bookingDate).format('YYYY-MM-DD'))
         );
       });
+
+      this.reloadCalender.emit(true);
   }
 
   addEvent(type: string, event: MatDatepickerInputEvent<Date>) {
@@ -61,8 +67,6 @@ export class BookingComponent implements OnInit {
           });
         });
       });
-
-    console.log(this.timeSlots);
   }
 }
 

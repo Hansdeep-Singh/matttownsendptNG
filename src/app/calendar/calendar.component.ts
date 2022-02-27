@@ -13,45 +13,38 @@ export class CalendarComponent implements OnInit {
   ngOnInit(): void {
     //  console.log(this.Calendar);
 
-    this.Calendar.forEach((element) => {
-      const dayEvents = [];
-      dayEvents.push(element);
-      dayEvents.forEach((element) => {
-       this.calData?.push(element);
-      });
-    });
-
-    console.log(this.calData);
+    this.fillCalenderArray();
   }
 
-  calData: any[]=[];
+  calData: any[] = [];
 
-  calis: string[] = [];
+  recieveReload($event: boolean) {
+    if ($event) {
+      this.fillCalenderArray();
+    }
+  }
 
   monthIncrement: number = 0;
 
   previousMonth() {
     this.monthIncrement--;
+    this.fillCalenderArray();
+  }
+
+  fillCalenderArray() {
     this.calData = [];
     this.Calendar.forEach((element) => {
       const dayEvents = [];
       dayEvents.push(element);
       dayEvents.forEach((element) => {
-       this.calData?.push(element);
+        this.calData?.push(element);
       });
     });
   }
 
   nextMonth() {
     this.monthIncrement++;
-    this.calData = [];
-    this.Calendar.forEach((element) => {
-      const dayEvents = [];
-      dayEvents.push(element);
-      dayEvents.forEach((element) => {
-       this.calData?.push(element);
-      });
-    });
+    this.fillCalenderArray();
   }
 
   // get currentMonth():string{
@@ -89,7 +82,10 @@ export class CalendarComponent implements OnInit {
             var calendarDate = moment(date.add(1, 'day').clone()).format(
               'YYYY-MM-DD'
             );
-            calendarData.push([calendarDate, this.getEvents(calendarDate)]);
+            calendarData.push([
+              moment(calendarDate).format('DD'),
+              this.getEvents(calendarDate),
+            ]);
             return calendarData;
           }),
       });

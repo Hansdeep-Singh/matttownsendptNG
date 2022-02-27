@@ -132,7 +132,7 @@ h2 {
 p {
   color: $clr-text-secondary;
   font-size: $font-size-paragraph;
-  padding:10px;
+  padding: 10px;
   font-size: 0.8em;
   line-height: 1.2em;
   font-weight: 900;
@@ -205,7 +205,6 @@ iframe {
   aspect-ratio: calc(1266 / 712);
 }
 .legible {
-
   position: relative;
   isolation: isolate;
   overflow: hidden;
@@ -218,9 +217,7 @@ iframe {
   background: linear-gradient(1deg, rgb(98 98 98 / 90%), rgba(0, 0, 0, 0.2));
 }
 
-
 .legible-dark {
-
   position: relative;
   isolation: isolate;
   overflow: hidden;
@@ -234,11 +231,11 @@ iframe {
   background: linear-gradient(1deg, rgba(51, 36, 36, 0.9), rgba(0, 0, 0, 0.2));
 }
 
-.quote::before{
-  content:open-quote;
+.quote::before {
+  content: open-quote;
 }
-.quote::after{
-  content:close-quote;
+.quote::after {
+  content: close-quote;
 }
 // form input:-webkit-autofill {
 //   border: 3px solid blue;
@@ -383,8 +380,13 @@ iframe {
 
 .colorfullbtn {
   position: relative;
-  background: rgb(2,0,36);
-  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(26,24,65,1) 51%, rgba(2,0,36,1) 100%);
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(26, 24, 65, 1) 51%,
+    rgba(2, 0, 36, 1) 100%
+  );
   color: white;
   border: none;
   padding: 5px;
@@ -630,6 +632,25 @@ iframe {
   table > tr > th {
     padding: 10px 2vw;
   }
+
+  .child {
+    background-color: rgb(107, 31, 94);
+    position: absolute;
+    width: 100%;
+  
+    display: none;
+  }
+
+  .parent {
+    position:relative;
+    cursor:pointer;
+    &:hover {
+      .child {
+        z-index: 1000;
+      display: block;
+      }
+    }
+  }
 }
 
 #login {
@@ -785,7 +806,6 @@ iframe {
   }
 }
 
-
 #videospage {
   img {
     width: 100%;
@@ -806,45 +826,45 @@ iframe {
     background-size: cover;
     max-width: 100%;
   }
-  * .benifits-box{
+  * .benifits-box {
     background-color: $clr-bg-item-100;
     margin: 20px 0px;
     padding: 9px;
     border: 1px solid $clr-bg-item-200;
     position: relative;
-   
   }
-.col-md span{
-  background-color: $clr-bg-item-100;
-  border-top: 2px solid $clr-bg-item-200;
-  padding: 11.5px;
-  border-radius: 50%;
-  position: absolute;
-  top: -0.9em;
-  right: -0.03em;
-  font-size: 39.5px;
-  color:$clr-tertiary-100;
-}
-.plan{
-  border: 1px solid $clr-primary-200;
-  background-color: $clr-primary-100;
+  .col-md span {
+    background-color: $clr-bg-item-100;
+    border-top: 2px solid $clr-bg-item-200;
+    padding: 11.5px;
+    border-radius: 50%;
+    position: absolute;
+    top: -0.9em;
+    right: -0.03em;
+    font-size: 39.5px;
+    color: $clr-tertiary-100;
+  }
+  .plan {
+    border: 1px solid $clr-primary-200;
+    background-color: $clr-primary-100;
     padding: 17px 23px;
     border-radius: 14px;
     margin: 8px 4px;
-  p{
-    color: #fff;
+    p {
+      color: #fff;
+    }
   }
-}
-h1{text-align: center;}
-h3{
-  position:relative;
-  margin-top:5px;
-}
-  h2{
+  h1 {
+    text-align: center;
+  }
+  h3 {
+    position: relative;
+    margin-top: 5px;
+  }
+  h2 {
     color: $clr-tertiary-100;
-    font-weight:900;
+    font-weight: 900;
   }
- 
 }
 
 mat-checkbox {
