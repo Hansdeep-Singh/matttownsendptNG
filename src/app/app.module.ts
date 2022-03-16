@@ -55,6 +55,8 @@ import { MembershipComponent } from './membership/membership.component';
 import { MatNativeDateModule } from '@angular/material/core';
 import { BookingComponent } from './booking/booking.component';
 import { ConsultComponent } from './consult/consult.component';
+import { AdminComponent } from './admin/admin.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 
@@ -79,7 +81,9 @@ import { ConsultComponent } from './consult/consult.component';
     ContactComponent,
     MembershipComponent,
     BookingComponent,
-    ConsultComponent
+    ConsultComponent,
+    AdminComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

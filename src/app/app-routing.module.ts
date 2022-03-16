@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AdminComponent } from './admin/admin.component';
 import { AuthGuard } from './auth/auth.guard';
 import { CalendarComponent } from './calendar/calendar.component';
 import { ConsultComponent } from './consult/consult.component';
@@ -41,6 +42,11 @@ const routes: Routes = [
   {
     path: 'member',
     component: MemberComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'admin',
+    component: AdminComponent,
     canActivate: [AuthGuard],
   },
   {

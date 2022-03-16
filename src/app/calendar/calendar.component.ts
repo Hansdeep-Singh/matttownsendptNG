@@ -12,7 +12,6 @@ export class CalendarComponent implements OnInit {
 
   ngOnInit(): void {
     //  console.log(this.Calendar);
-
     this.fillCalenderArray();
   }
 
@@ -83,7 +82,7 @@ export class CalendarComponent implements OnInit {
               'YYYY-MM-DD'
             );
             calendarData.push([
-              moment(calendarDate).format('DD'),
+              moment(calendarDate).format('MM/DD/YYYY'),
               this.getEvents(calendarDate),
             ]);
             return calendarData;

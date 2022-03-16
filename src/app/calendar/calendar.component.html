@@ -1,4 +1,5 @@
 <section id="calendar">
+  <div class="space-1"></div>
   <div class="container-fluid">
     <div class="row mt-3">
       <div class="col">
@@ -29,6 +30,15 @@
         {{ currentMonthYear.year }}
       </div>
     </div>
+
+    <div class="row">
+      <div class="col text-center">
+        <p class="legible-dark bg-primary rounded">
+          Hover over the date to view current bookings
+        </p>
+      </div>
+    </div>
+
     <div class="row">
       <div class="col">
         <table>
@@ -38,13 +48,19 @@
             </th>
           </tr>
 
-          <tr *ngFor="let cal of calData">
-            <td *ngFor="let events of cal.daysEvents">
+          <tr *ngFor="let calendar of calData">
+            <td *ngFor="let days of calendar.daysEvents">
               <div class="parent">
-                <div *ngFor="let dayz of events[0]">
-                  {{ dayz }}
+               
+                <div  *ngFor="let day of days[0]">
+                  {{ day | date:"dd-MMM" }}
                   <div class="child">
-                    <span *ngFor="let evts of dayz[0]"> {{ evts }}<br /></span>
+                     <span class="small bg-primary">Available</span>
+                    <span *ngFor="let events of day[0]">
+                      <div class="legible-dark bg-primary rounded mt-1">
+                        {{ events }}
+                      </div>
+                    </span>
                   </div>
                 </div>
               </div>

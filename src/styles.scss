@@ -625,6 +625,13 @@ iframe {
   table {
     border: 1px solid #fff;
   }
+
+  @media only screen and (max-width: 1200px) {
+    table {
+      width:100%;
+    }
+  }
+
   table > tr > td {
     text-align: center;
     border: 1px solid rgb(255, 255, 255);
@@ -634,7 +641,6 @@ iframe {
   }
 
   .child {
-    background-color: rgb(107, 31, 94);
     position: absolute;
     width: 100%;
   
@@ -811,6 +817,29 @@ iframe {
     width: 100%;
     padding: 0;
   }
+
+  .parallel {
+    background-image: url(./assets/images/videos.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    max-width: 100%;
+  }
+  
+}
+
+#podcasts {
+  img {
+    width: 100%;
+    padding: 0;
+  }
+
+  .parallel {
+    background-image: url(./assets/images/podcasts.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    max-width: 100%;
+  }
+  
 }
 
 #membership {

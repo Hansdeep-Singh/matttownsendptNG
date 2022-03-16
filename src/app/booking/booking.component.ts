@@ -1,8 +1,9 @@
-import { Component, OnInit, Output,EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { MatDatepickerInputEvent } from '@angular/material/datepicker';
 import { ApiserviceService } from '../services/apiservice.service';
 import * as moment from 'moment';
+import { EngineService } from '../engine/engine.service';
 
 @Component({
   selector: 'matt-booking',
@@ -10,13 +11,11 @@ import * as moment from 'moment';
   styleUrls: ['./booking.component.scss'],
 })
 export class BookingComponent implements OnInit {
-  constructor(private fb: FormBuilder, private apiService: ApiserviceService) {}
+  constructor(private fb: FormBuilder, private engineService: EngineService, private apiService: ApiserviceService) {}
 
   @Output() reloadCalender = new EventEmitter<boolean>();
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 
   bookingForm = this.fb.group({
     bookingDate: [null, Validators.required],
@@ -28,13 +27,12 @@ export class BookingComponent implements OnInit {
   bookingPost: bookingPost | undefined;
 
   submit(post: any) {
- 
-   let id = localStorage.getItem('id');
-    const id2 = 'b60e41ee-5311-409a-9d96-87731e8f3645';
+    let id = localStorage.getItem('id');
+    const id2 = 'B60E41EE-5311-409A-9D96-87731E8F3645';
     //const id2 = 'C51141C9-5D18-4F3B-B22A-21216D76630F';
 
     this.bookingPost = {
-      userId: id,
+      userId: id2,
       bookingDate: moment(post.bookingDate).format('YYYY-MM-DD'),
       slotId: post.slotId,
     };
@@ -42,12 +40,14 @@ export class BookingComponent implements OnInit {
     this.apiService
       .post(this.bookingPost, 'Booking', 'AddBooking')
       .subscribe((data) => {
-        Promise.resolve().then(() =>
-          this.getTimeSlots(moment(post.bookingDate).format('YYYY-MM-DD'))
-        );
+        Promise.resolve()
+          .then(() =>
+            this.getTimeSlots(moment(post.bookingDate).format('YYYY-MM-DD'))
+          )
+          .then(() => this.reloadCalender.emit(true))
+          .then(() =>  this.engineService.changeNotifyMessage({ success: false, notifymessage: data.message }))
+          ;
       });
-
-      this.reloadCalender.emit(true);
   }
 
   addEvent(type: string, event: MatDatepickerInputEvent<Date>) {

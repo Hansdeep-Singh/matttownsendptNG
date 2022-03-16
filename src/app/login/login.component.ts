@@ -33,7 +33,6 @@ export class LoginComponent implements OnInit {
 
   closeLogin() {
     this.close.emit(false);
-   
   }
 
   animateEmailAddressFn() {
@@ -51,11 +50,12 @@ export class LoginComponent implements OnInit {
         if (data.success) {
           const obj = JSON.parse(data.message);
           localStorage.setItem('token', obj.AccessToken);
-          localStorage.setItem('id',obj.UserId);
+          localStorage.setItem('id', obj.UserId);
           this.close.emit(false);
-          this._router.navigate(['./member']);
+          if (obj.Roles == 'Admin') this._router.navigate(['./admin']);
+          else this._router.navigate(['./member']);
         } else {
-          this.message = {success : false, notifymessage : data.message};
+          this.message = { success: false, notifymessage: data.message };
           this.engineService.changeNotifyMessage(this.message);
         }
       });

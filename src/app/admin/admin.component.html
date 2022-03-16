@@ -1,0 +1,31 @@
+
+<div class="display-1 text-center">WELCOME ADMIN</div>
+
+<section id="uploadvideos">
+    <form [formGroup]="uploadVideos" (ngSubmit)="submit(uploadVideos.value)">
+
+<div class="container">
+
+        <div class="row">
+            <div class="col-md">
+              <input
+                    type="file"
+                    id="uploadFile"
+                    formControlName="videosXls"
+                    (change)="onFileSelected($event)"
+                   
+                  />
+                  
+            </div>
+          
+        </div>
+
+        <div class="row mt-5">
+            <div class="col text-center">
+                <p class="text-danger" *ngIf="!uploadVideos.valid">Field marked with (*) are required.</p>
+                <button [disabled]="!uploadVideos.valid" type="submit">Submit</button>
+            </div>
+        </div>
+    </div>
+    </form>
+</section>
